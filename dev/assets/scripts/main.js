@@ -7,6 +7,7 @@ import constructive from './modules/constructive.js'
 import initHeader from './modules/header'
 import initConstructive from './modules/constructive'
 import sliderBlock from './modules/sliderBlock'
+import characteristics from './modules/characteristics'
 // import preloader from 'preloader-js';
 
 export default function main() {
@@ -19,6 +20,7 @@ export default function main() {
   initHeader()
   initConstructive()
   sliderBlock()
+  characteristics()
   // setTimeout(() => {
   //     preloader.hide()
   // }, 500)
