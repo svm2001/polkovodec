@@ -1,0 +1,52 @@
+.modal {
+  &.hystmodal {
+    .hystmodal {
+      &__wrap {
+        padding: 0 20px;
+      }
+
+      &__window {
+        width: 100%;
+        max-width: 600px;
+        padding: 40px;
+        background: #fff;
+      }
+
+      &__close {
+        top: 20px;
+        right: 20px;
+        width: 24px;
+        height: 24px;
+        padding: 0;
+        background-image: none;
+        transition: opacity 0.3s;
+
+        &:hover {
+          opacity: 0.6;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .modal {
+    &.hystmodal {
+      .hystmodal {
+        &__window {
+          padding: 16px;
+          background: #fff;
+        }
+
+        &__close {
+          top: 10px;
+          right: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+-
+  const defaultFooterProps = {
+      classes: '',
+  }
+
+mixin footer(props = defaultFooterProps, ...dataset)
+  -
+    const checkProps = {
+        classes: props.classes ? props.classes : defaultFooterProps.classes,
+    }
+
+  footer.footer
+    .container
+      .footer__inner
+        .footer__body
+          .footer__contact
+            .footer__contact-title Оставьте заявку
+            .footer__contact-subtitle Мы будем рады обсудить ваш проект и помочь вам реализовать все ваши идеи
+
+            .footer__contact-links
+              a.footer__contact-link(
+                href="tel:+74952234010",
+                title="Позвонить"
+              ) +7 (495) 223-40-10
+              a.footer__contact-link(
+                href="mailto:info@polkovodets.com",
+                title="Отправить e-mail"
+              ) info@polkovodets.com
+          .footer__logo
+            include ../assets/icon-system/icon-footer-logo
+          form(action, data-validate, novalidate)
+            .form__body
+              include ../ui/input
+              .footer__form-inputs
+                +input({ validateName: 'name', placeholder: 'Имя', name: 'name', required: true, classes: 'input--theme--light input--size--l' })
+
+                +input({ placeholder: 'Телефон', name: 'phone', validateName: 'phone', inputmode: 'tel', required: true, classes: 'input--theme--light input--size--l' }, { 'data-input-mask': 'phone'})
+
+                +input({ type: 'email', validateName: 'email', name: 'email', inputmode: 'email', placeholder: 'Email*', required: true, classes: 'input--theme--light input--size--l' })
+
+              +btn({ type: 'submit', name: 'Отправить', classes: '' })
+
+              p.footer__form-agreement Нажимая на кнопку, вы соглашаетесь с
+                | &nbsp;
+                a(href="javascript:void(0)") политикой конфиденциальности
+            .form__success
+              .form__success-check
+                include ../assets/icon-system/icon-check
+              .form__success-title Заявка успешно отправлена!
+              .form__success-subtitle Мы будем рады обсудить ваш проект и помочь вам реализовать все ваши идеи
+
+            .form__error
+              .form__error-check
+                include ../assets/icon-system/icon-close
+              .form__error-title Что-то пошло не так
+              .form__error-subtitle Поробуйте отправить форму позже
+          .footer__contact-links.footer__contact-links--mob
+            a.footer__contact-link(href="tel:+74952234010", title="Позвонить") +7 (495) 223-40-10
+            a.footer__contact-link(
+              href="mailto:info@polkovodets.com",
+              title="Отправить e-mail"
+            ) info@polkovodets.com
+          .footer__logo.footer__logo--mob
+            include ../assets/icon-system/icon-footer-logo
+        .footer__bottom
+          .footer__bottom-logo
+            include ../assets/icon-system/icon-footer-logo-text
+          .footer__bottom-links
+            a.footer__bottom-links-item(href="javascript:void(0)") Политика конфиденциальности
+            a.footer__bottom-links-item(href="javascript:void(0)") Файлы куки

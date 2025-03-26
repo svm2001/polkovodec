@@ -1,0 +1,41 @@
+-
+  const defaultHeroProps = {
+      classes: 'header--theme--default',
+      title: 'Универсальные телекоммуникационные',
+      titleMob: 'Универсальные телекоммуникац.',
+      markedTitle: 'шкафы ДОБРЫНЯ©',
+      subtitle: 'Эффективная организация пространства серверных помещений и мобильных передвижных пунктов',
+      btnName: 'Собрать шкаф'
+  }
+
+mixin hero(props = defaultHeroProps, ...dataset)
+  include ../ui/btn
+  -
+    const checkProps = {
+        classes: props.classes ? props.classes : defaultHeroProps.classes,
+        title: props.title ? props.title : defaultHeroProps.title,
+        titleMob: props.titleMob ? props.titleMob : defaultHeroProps.titleMob,
+        markedTitle: props.markedTitle ? props.markedTitle : defaultHeroProps.markedTitle,
+        subtitle: props.subtitle ? props.subtitle : defaultHeroProps.subtitle,
+        btnName: props.btnName ? props.btnName : defaultHeroProps.btnName,
+    }
+  section.section.hero
+    .hero__bg
+      img.lazy.hero__bg-full(
+        data-src="./images/hero/bg.jpg",
+        src="./images/no-image.jpg",
+        alt="img"
+      )
+      img.lazy.hero__bg-center(
+        data-src="./images/hero/locker.png",
+        src="./images/no-image.jpg",
+        alt="img"
+      )
+    .container
+      .hero__inner
+        h1.hero__title
+          .hero__title-text= checkProps.title
+          .hero__title-text.hero__title-text--mob= checkProps.titleMob
+          .hero__title-marked= checkProps.markedTitle
+        .hero__subtitle= checkProps.subtitle
+        +btn({ name: checkProps.btnName, })

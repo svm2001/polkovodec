@@ -1,0 +1,44 @@
+-
+  const defaultConstructiveProps = {
+      classes: '',
+  }
+
+  const constructiveData = {
+    title: 'Конструктивные особенности',
+    items: [
+      { imageIndex: 1, text: 'Каркас из конструкционного профиля с усилением' },
+      { imageIndex: 2, text: 'Одностворчатая дверь' },
+      { imageIndex: 3, text: 'Ручка с поворотным механизмом и замком' },
+      { imageIndex: 4, text: 'Ручка для транспортировки' },
+      { imageIndex: 5, text: 'Комплект виброизоляции' },
+      { imageIndex: 6, text: 'Регулируемая стойка с Т-образным пазом' },
+      { imageIndex: 7, text: 'Съемные стенки с клавишным замком' },
+      { imageIndex: 8, text: 'Комплект теплоотведения' },
+      { imageIndex: 9, text: 'Комплект упоров горизонтальных' }
+    ]
+  }
+
+mixin constructive(props = defaultHeroProps, ...dataset)
+  -
+    const checkProps = {
+        classes: props.classes ? props.classes : defaultConstructiveProps.classes,
+    }
+  section.js-konstruktiv.constructive
+    .container
+      h2.constructive__title= constructiveData.title
+      .constructive__content
+        .constructive__list.constructive__list--left
+          each item, index in constructiveData.items
+            if index < 5
+              .constructive__item(data-image-index=item.imageIndex)
+                .constructive__item-text= item.text
+                .constructive__item-dot
+        .constructive__image(data-default-image="./images/constructive/default.png")
+          img(src="./images/constructive/default.png", alt=constructiveData.title)
+        .constructive__list.constructive__list--right
+          each item, index in constructiveData.items
+            if index >= 5
+              .constructive__item(data-image-index=item.imageIndex)
+                .constructive__item-dot
+                .constructive__item-text= item.text
+

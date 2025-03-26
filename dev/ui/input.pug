@@ -1,0 +1,58 @@
+-
+  const defaultInputProps = {
+      type: 'text',
+      name: '',
+      validateName: '',
+      label: '',
+      inputmode: 'text',
+      placeholder: '',
+      required: false,
+      disabled: false,
+      classes: '',
+      messageText: 'Обязательное поле',
+      messageIsShow: false,
+      autocomplete: 'off'
+  }
+
+mixin input(props = defaultInputProps, ...dataset)
+  -
+    const checkProps = {
+        type: props.type ? props.type : defaultInputProps.type,
+        name: props.name ? props.name : defaultInputProps.name,
+        validateName: props.validateName ? props.validateName : defaultInputProps.validateName,
+        label: props.label ? props.label : defaultInputProps.label,
+        inputmode: props.inputmode ? props.inputmode : defaultInputProps.inputmode,
+        placeholder: props.placeholder ? props.placeholder : defaultInputProps.placeholder,
+        required: props.required ? props.required : defaultInputProps.required,
+        disabled: props.disabled ? props.disabled : defaultInputProps.disabled,
+        classes: props.classes ? props.classes : defaultInputProps.classes,
+        messageText: props.messageText ? props.messageText : defaultInputProps.messageText,
+        messageIsShow: props.messageIsShow ? props.messageIsShow : defaultInputProps.messageIsShow,
+        autocomplete: props.autocomplete ? props.autocomplete : defaultInputProps.autocomplete
+    }
+
+    let mask = false
+
+    if (checkProps.isPhone) {
+        mask = 'phone'
+    }
+
+  .input(
+    class=`${checkProps.classes} ${checkProps.disabled ? 'disabled' : ''} ${checkProps.messageIsShow ? 'input--show-message' : ''}`
+  )&attributes(...dataset)
+    if (checkProps.label !== '')
+      span.input__label= checkProps.label
+    input.input__field(
+      type=checkProps.type,
+      name=checkProps.name,
+      data-input-name=checkProps.validateName,
+      data-input-mask=mask,
+      inputmode=checkProps.inputmode,
+      required=checkProps.required,
+      placeholder=checkProps.placeholder,
+      autocomplete=checkProps.autocomplete
+    )
+    .input__message
+      svg
+        use(xlink:href="#alert-circle")
+      span= checkProps.messageText

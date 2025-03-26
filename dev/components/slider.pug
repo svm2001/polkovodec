@@ -1,0 +1,44 @@
+-
+  const defaultSliderProps = {
+      classes: '',
+  }
+
+mixin slider(props = defaultSliderProps, ...dataset)
+  -
+    const checkProps = {
+        classes: props.classes ? props.classes : defaultSliderProps.classes,
+    }
+  section.slider.js-primenenie(class=checkProps.classes)
+    .container
+      .swiper
+        .swiper-wrapper
+          - for (let i = 0; i < 5; i++)
+            .swiper-slide
+              .slider__item
+                .slider__item-block
+                  .slider__item-block-wrapper
+                    h3 Варианты применения 
+                    img(src="./images/slider/1.jpg" alt="Slide " + (i + 1))
+                    .slider__item-info
+                      h4.slider__item-info-title Шкаф в серверной
+                      p.slider__item-info-subtitle Шкафы ДОБРЫНЯ® предназначены для телекоммуникационных центров, серверных, офисов и других мест, где требуется размещение электросетей и технологического оборудования, как в гражданской, так и в военной сферах.
+                .slider__item-info.slider__item-info--mob
+                    h4.slider__item-info-title Шкаф в серверной
+                    p.slider__item-info-subtitle Шкафы ДОБРЫНЯ® предназначены для телекоммуникационных центров, серверных, офисов и других мест, где требуется размещение электросетей и технологического оборудования, как в гражданской, так и в военной сферах.
+            .swiper-slide
+              .slider__item.slider__item--double
+                .slider__item-block
+                  .slider__item-block-wrapper
+                    h3 Варианты применения 2
+                    img(src="./images/slider/1.jpg" alt="Slide " + (i + 1))
+                    .slider__item-info
+                      h4.slider__item-info-title Шкаф в серверной
+                      p.slider__item-info-subtitle Шкафы ДОБРЫНЯ® предназначены для телекоммуникационных центров, серверных, офисов и других мест, где требуется размещение электросетей и технологического оборудования, как в гражданской, так и в военной сферах.
+                  .slider__item-info.slider__item-info--mob
+                      h4.slider__item-info-title Шкаф в серверной
+                      p.slider__item-info-subtitle Шкафы ДОБРЫНЯ® предназначены для телекоммуникационных центров, серверных, офисов и других мест, где требуется размещение электросетей и технологического оборудования, как в гражданской, так и в военной сферах.
+                .slider__item-block
+                  .slider__item-block-wrapper
+                    h3 Варианты применения 2
+                    img(src="./images/slider/1.jpg" alt="Slide " + (i + 1))
+    .swiper-pagination                

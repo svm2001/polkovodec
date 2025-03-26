@@ -1,0 +1,123 @@
+-
+  const defaultHeaderProps = {
+      classes: 'header--theme--default',
+      links: [
+          'Характеристики',
+          'Конструктив',
+          'Конфигуратор',
+          'Применение',
+      ],
+      menuLinks: [
+          'Характеристики',
+          'Конструктив',
+          'Конфигуратор',
+          'Применение',
+      ]
+  }
+
+mixin header(props = defaultHeaderProps, ...dataset)
+  -
+    const checkProps = {
+        links: props.links ? props.links : defaultHeaderProps.links,
+        classes: props.classes ? props.classes : defaultHeaderProps.classes,
+        menuLinks: props.menuLinks ? props.menuLinks : defaultHeaderProps.menuLinks,
+    }
+
+  include ../ui/btn
+
+  header.header(class=`${checkProps.classes}`)&attributes(...dataset)
+    .container
+      .header__inner
+        .header__nav
+          .header__logo-white
+            include ../assets/icon-system/icon-logo-white
+          .header__logo-dark
+            include ../assets/icon-system/icon-logo-dark
+          nav
+            each link in checkProps.links
+              a.header__link(href="javascript:void(0)")= link
+          button.header__burger-init
+            span
+            span
+            span
+        .header__info
+          .header__contact
+            a.header__contact-link(href="tel:+74952234010", title="Позвонить") +7 (495) 223-40-10
+            a.header__contact-link(
+              href="mailto:info@polkovodets.com",
+              title="Отправить e-mail"
+            ) info@polkovodets.com
+          +btn({ classes: "header__btn", name: "Оставить заявку" }, { 'data-hystmodal': '#header-form' })
+
+  .burger
+    .burger__top
+      include ../assets/icon-system/icon-logo-dark
+      button.burger__close
+        include ../assets/icon-system/icon-close
+    .burger__form
+      form(action, data-validate, novalidate)
+        .form__body
+          .header__form-title Оставьте заявку
+          .header__form-subtitle Мы будем рады обсудить ваш проект и помочь <br> вам реализовать все ваши идеи
+          include ../ui/input
+          .header__form-inputs
+            +input({ validateName: 'name', placeholder: 'Имя', name: 'name', required: true, classes: 'input--theme--t input--size--l' })
+            +input({ placeholder: 'Телефон', name: 'phone', validateName: 'phone', inputmode: 'tel', required: true, classes: 'input--size--l' }, { 'data-input-mask': 'phone'})
+            +input({ type: 'email', validateName: 'email', name: 'email', inputmode: 'email', placeholder: 'Email*', required: true, classes: 'input--size--l' })
+            +btn({ type: 'submit', name: 'Отправить', classes: 'header__form-send-btn' })
+
+          p.header__form-agreement Нажимая на кнопку, вы соглашаетесь с
+            | &nbsp;
+            a(href="javascript:void(0)") политикой конфиденциальности
+
+        .form__success
+          .form__success-check
+          include ../assets/icon-system/icon-check
+          .form__success-title Заявка успешно отправлена!
+          .form__success-subtitle Мы будем рады обсудить ваш проект и помочь вам реализовать все ваши идеи
+
+        .form__error
+          .form__error-check
+          include ../assets/icon-system/icon-close-white
+          .form__error-title Что-то пошло не так
+          .form__error-subtitle Поробуйте отправить форму позже
+    .burger__nav
+      each link in checkProps.menuLinks
+        a.burger__link(href="javascript:void(0)")= link
+
+    .burger__info
+      +btn({ classes: "burger__btn", name: "Оставить заявку" })
+      .burger__contact
+        a.burger__contact-link(href="tel:+74952234010", title="Позвонить") +7 (495) 223-40-10
+        a.burger__contact-link(
+          href="mailto:info@polkovodets.com",
+          title="Отправить e-mail"
+        ) info@polkovodets.com
+
+  include ../modal-windows/modal
+  +modal({ id: 'header-form', classes: 'header__form' })
+    form(action, data-validate, novalidate)
+      .form__body
+        .header__form-title Оставьте заявку
+        .header__form-subtitle Мы будем рады обсудить ваш проект и помочь <br> вам реализовать все ваши идеи
+        include ../ui/input
+        .header__form-inputs
+          +input({ validateName: 'name', placeholder: 'Имя', name: 'name', required: true, classes: 'input--theme--t input--size--l' })
+          +input({ placeholder: 'Телефон', name: 'phone', validateName: 'phone', inputmode: 'tel', required: true, classes: 'input--size--l' }, { 'data-input-mask': 'phone'})
+          +input({ type: 'email', validateName: 'email', name: 'email', inputmode: 'email', placeholder: 'Email*', required: true, classes: 'input--size--l' })
+          +btn({ type: 'submit', name: 'Отправить', classes: 'header__form-send-btn' })
+
+        p.header__form-agreement Нажимая на кнопку, вы соглашаетесь с
+          | &nbsp;
+          a(href="javascript:void(0)") политикой конфиденциальности
+      .form__success
+        .form__success-check
+          include ../assets/icon-system/icon-check
+        .form__success-title Заявка успешно отправлена!
+        .form__success-subtitle Мы будем рады обсудить ваш проект и помочь вам реализовать все ваши идеи
+
+      .form__error
+        .form__error-check
+          include ../assets/icon-system/icon-close-white
+        .form__error-title Что-то пошло не так
+        .form__error-subtitle Поробуйте отправить форму позже

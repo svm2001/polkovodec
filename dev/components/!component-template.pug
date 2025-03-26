@@ -1,0 +1,19 @@
+-
+  const defaultComponentProps = {
+      classes: '',
+      arr: [
+          'arr_item#1',
+          'arr_item#2',
+          'arr_item#3',
+          'arr_item#4'
+      ]
+  }
+
+mixin component(props = defaultComponentProps, ...dataset)
+  -
+    const checkProps = {
+        classes: props.classes ? props.classes : defaultComponentProps.classes,
+        arr: props.arr ? props.arr : defaultComponentProps.arr,
+    }
+
+  // put component body here
