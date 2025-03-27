@@ -249,7 +249,6 @@
 
     &__title {
       font-size: 24px;
-      margin-bottom: 32px;
     }
 
     &__inner, &__accordions {

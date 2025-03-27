@@ -8,6 +8,7 @@ import initHeader from './modules/header'
 import initConstructive from './modules/constructive'
 import sliderBlock from './modules/sliderBlock'
 import characteristics from './modules/characteristics'
+import accordions from './modules/accordions'
 // import preloader from 'preloader-js';
 
 export default function main() {
@@ -21,6 +22,7 @@ export default function main() {
   initConstructive()
   sliderBlock()
   characteristics()
+  accordions()
   // setTimeout(() => {
   //     preloader.hide()
   // }, 500)

@@ -34,7 +34,7 @@ export default function sliderBlock() {
             }
         },
         breakpoints: {
-            1280: {
+            1281: {
                 pagination: false,
                 spaceBetween: 0
             }

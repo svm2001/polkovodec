@@ -51,7 +51,7 @@ mixin characteristics(props = defaultCharacteristicsProps, ...dataset)
     }
   section.js-kharakteristiki.characteristics
     .container
-      h2.characteristics__title= characteristicsData.title
+      .characteristics__title= characteristicsData.title
       .characteristics__inner
         .characteristics__items
           each item in characteristicsData.items

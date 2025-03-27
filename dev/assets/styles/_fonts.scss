@@ -1,15 +1,23 @@
-// Inter
+// Montserrat
 
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/Inter/Inter-Regular.ttf') format('truetype');
+  src: url('/fonts/Montserrat/Montserrat-400.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 500;
-  src: url('/fonts/Inter/Inter-Medium.ttf') format('truetype');
+  src: url('/fonts/Montserrat/Montserrat-500.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/Montserrat/Montserrat-600.ttf') format('truetype');
+}
+
