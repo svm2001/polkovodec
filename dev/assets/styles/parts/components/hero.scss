@@ -76,6 +76,14 @@
 
   .btn {
     width: fit-content;
+    span {
+      transition: $transition;
+      color: $black;
+    }
+  }
+
+  .btn:hover span {
+    color: $white;
   }
 }
 
