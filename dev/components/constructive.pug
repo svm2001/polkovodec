@@ -36,8 +36,9 @@ mixin constructive(props = defaultHeroProps, ...dataset)
         .constructive__image(
           data-default-image="./images/constructive/default.png"
         )
-          img(
-            src="./images/constructive/default.png",
+          img.lazy(
+            src="./images/no-image.jpg",
+            data-src="./images/constructive/default.png",
             alt=constructiveData.title
           )
         .constructive__list.constructive__list--right

@@ -41,12 +41,17 @@ mixin developments
           .developments__list-item
             .developments__list-item-static
               span.developments__list-item-static-label= item.label
-              img.developments__list-item-static-logo(
-                src=`./images/developments/${item.logo}.png`,
+              img.lazy.developments__list-item-static-logo(
+                src="./images/no-image.jpg",
+                data-src=`./images/developments/${item.logo}.png`,
                 alt=item.title
               )
             .developments__list-item-image
-              img(src=`./images/developments/${item.img}.jpg`, alt=item.title)
+              img.lazy(
+                src="./images/no-image.jpg",
+                data-src=`./images/developments/${item.img}.jpg`,
+                alt=item.title
+              )
             .developments__list-item-content-shadow
             .developments__list-item-content
               h3.developments__list-item-title= item.title
