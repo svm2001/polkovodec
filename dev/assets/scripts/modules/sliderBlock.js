@@ -14,7 +14,7 @@ export default function sliderBlock() {
     modules: [Pagination, EffectCoverflow],
     effect: 'coverflow',
     grabCursor: true,
-    slidesPerView: 'auto',
+    slidesPerView: 1, // 'auto' - конфликует с centeredSlides. Не использовать
     centeredSlides: true,
     speed: 1000,
     coverflowEffect: {
