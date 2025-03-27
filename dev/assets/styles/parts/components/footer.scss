@@ -32,6 +32,15 @@
   .form__body .btn {
     margin-bottom: 20px;
     width: 100%;
+
+    span {
+      color: $black;
+      transition: $transition;
+    }
+
+    &:hover span {
+      color: $white;
+    }
   }
 
   &__form-agreement {
