@@ -9,7 +9,8 @@ block content
   include ../../components/characteristics
   include ../../components/developments
   .wrapper
-    +hero
+    .lazy-load(data-lazy="hero")
+      +hero
     .lazy-load(data-lazy="characteristics")
       +characteristics
     .lazy-load(data-lazy="constructive")
