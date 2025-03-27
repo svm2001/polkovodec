@@ -62,12 +62,13 @@
       border-radius: 50%;
     }
 
-    &:hover, &.active {
+    &:hover,
+    &.active {
       color: $primary-green;
       border-bottom: 1px solid $primary-green;
 
       .constructive__item-dot {
-        background-color: $primary-green;;
+        background-color: $primary-green;
       }
     }
   }
@@ -133,7 +134,6 @@
 
 @media (max-width: 450px) {
   .constructive {
-
     &__image {
       min-height: 100%;
       max-height: 100%;

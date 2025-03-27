@@ -49,7 +49,7 @@ mixin characteristics(props = defaultCharacteristicsProps, ...dataset)
     const checkProps = {
         classes: props.classes ? props.classes : defaultCharacteristicsProps.classes,
     }
-  section.js-kharakteristiki.characteristics
+  section(data-smooth-scrolling="characteristics").characteristics
     .container
       h2.characteristics__title= characteristicsData.title
       .characteristics__inner
@@ -59,33 +59,55 @@ mixin characteristics(props = defaultCharacteristicsProps, ...dataset)
               .characteristics__item-inner
                 .characteristics__item-title= item.title
               .characteristics__item-icon
-                img.characteristics__item-icon--static(src=`./images/characteristics/icons/${item.icon}.svg`, alt="img")
-                img.characteristics__item-icon--hover(src=`./images/characteristics/icons/${item.iconHover}.svg`, alt="img")
+                img.characteristics__item-icon--static(
+                  src=`./images/characteristics/icons/${item.icon}.svg`,
+                  alt="img"
+                )
+                img.characteristics__item-icon--hover(
+                  src=`./images/characteristics/icons/${item.iconHover}.svg`,
+                  alt="img"
+                )
               .characteristics__item-text= item.text
         .characteristics__accordions
           each item in characteristicsData.items
             .accordion
               .accordion__icon
-                img.accordion__icon--static(src=`./images/characteristics/icons/${item.icon}.svg`, alt="img")
-                img.accordion__icon--hover(src=`./images/characteristics/icons/${item.iconHover}.svg`, alt="img")
+                img.accordion__icon--static(
+                  src=`./images/characteristics/icons/${item.icon}.svg`,
+                  alt="img"
+                )
+                img.accordion__icon--hover(
+                  src=`./images/characteristics/icons/${item.iconHover}.svg`,
+                  alt="img"
+                )
               .accordion__intro
                 .accordion__title= item.title
               .accordion__content= item.text
         .characteristics__poster-inner
           .characteristics__poster-wrapper
             .characteristics__country
-              img(src="./images/characteristics/russia.svg", alt=constructiveData.title)
-            img.characteristics__label(src="./images/characteristics/label.png", alt=constructiveData.title)
+              img(
+                src="./images/characteristics/russia.svg",
+                alt=constructiveData.title
+              )
+            img.characteristics__label(
+              src="./images/characteristics/label.png",
+              alt=constructiveData.title
+            )
             .characteristics__poster
               each item, index in characteristicsData.items
-                img.poster(src=`./images/characteristics/${item.image}`, alt=item.title, class=index === 0 ? 'active' : '')
+                img.poster(
+                  src=`./images/characteristics/${item.image}`,
+                  alt=item.title,
+                  class=index === 0 ? "active" : ""
+                )
       .characteristics__info
         .characteristics__certificate
-          a(href="javascript:void(0)" download="/").characteristics__certificate-item
-            img(src="./images/characteristics/file.svg", alt='file')
+          a.characteristics__certificate-item(href="javascript:void(0)", download="/")
+            img(src="./images/characteristics/file.svg", alt="file")
             span Длиное название сертификата
-          a(href="javascript:void(0)" download="/").characteristics__certificate-item
-            img(src="./images/characteristics/file.svg", alt='file')
+          a.characteristics__certificate-item(href="javascript:void(0)", download="/")
+            img(src="./images/characteristics/file.svg", alt="file")
             span Длиное название сертификата
         .characteristics__certificate
           span.characteristics__certificate-item Шкафы изготовлены в соответствии с ТУ 31.01.11-001-02694337-2024

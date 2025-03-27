@@ -1,9 +1,9 @@
-import {Swiper} from '../../../../node_modules/swiper/swiper-bundle.min.mjs'
-import {Pagination, EffectCoverflow} from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-coverflow';
+import { Swiper } from '../../../../node_modules/swiper/swiper-bundle.min.mjs'
+import { Pagination, EffectCoverflow } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/effect-coverflow'
 
 export default function sliderBlock() {
   const slider = document.querySelector('.slider .swiper')
@@ -29,14 +29,14 @@ export default function sliderBlock() {
     },
     on: {
       slideChange: function () {
-        const bullets = document.querySelectorAll('.swiper-pagination-bullet');
+        const bullets = document.querySelectorAll('.swiper-pagination-bullet')
         bullets.forEach((bullet, index) => {
-          bullet.classList.remove('swiper-pagination-bullet-active');
+          bullet.classList.remove('swiper-pagination-bullet-active')
           if (index === this.realIndex) {
-            bullet.classList.add('swiper-pagination-bullet-active');
+            bullet.classList.add('swiper-pagination-bullet-active')
           }
-        });
-      }
+        })
+      },
     },
     breakpoints: {
       1281: {
@@ -48,9 +48,7 @@ export default function sliderBlock() {
           depth: 2000,
           slideShadows: false,
         },
-
-      }
-    }
+      },
+    },
   })
 }
-

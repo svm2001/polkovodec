@@ -2,16 +2,22 @@
   const defaultHeaderProps = {
       classes: 'header--theme--default',
       links: [
-          'Характеристики',
-          'Конструктив',
-          'Конфигуратор',
-          'Применение',
-      ],
-      menuLinks: [
-          'Характеристики',
-          'Конструктив',
-          'Конфигуратор',
-          'Применение',
+          {
+            name: 'Характеристики',
+            url: 'characteristics'
+          },
+          {
+            name: 'Конструктив',
+            url: 'constructive'
+          },
+          {
+            name: 'Конфигуратор',
+            url: 'configurator'
+          },
+          {
+            name: 'Применение',
+            url: 'application'
+          }
       ]
   }
 
@@ -20,7 +26,6 @@ mixin header(props = defaultHeaderProps, ...dataset)
     const checkProps = {
         links: props.links ? props.links : defaultHeaderProps.links,
         classes: props.classes ? props.classes : defaultHeaderProps.classes,
-        menuLinks: props.menuLinks ? props.menuLinks : defaultHeaderProps.menuLinks,
     }
 
   include ../ui/btn
@@ -35,7 +40,7 @@ mixin header(props = defaultHeaderProps, ...dataset)
             include ../assets/icon-system/icon-logo-dark
           nav
             each link in checkProps.links
-              a.header__link(href="javascript:void(0)")= link
+              a.header__link(href="javascript:void(0)" data-smooth-scrolling=`#${link.url}`)= link.name
           button.header__burger-init
             span
             span
@@ -78,12 +83,12 @@ mixin header(props = defaultHeaderProps, ...dataset)
 
         .form__error
           .form__error-check
-             include ../assets/icon-system/icon-close-white
+            include ../assets/icon-system/icon-close-white
           .form__error-title Что-то пошло не так
           .form__error-subtitle Поробуйте отправить форму позже
     .burger__nav
-      each link in checkProps.menuLinks
-        a.burger__link(href="javascript:void(0)")= link
+      each link in checkProps.links
+        a.burger__link(href="javascript:void(0)" data-smooth-scrolling=`#${link.url}`)= link.name
 
     .burger__info
       +btn({ classes: "burger__btn", name: "Оставить заявку" })
@@ -112,12 +117,12 @@ mixin header(props = defaultHeaderProps, ...dataset)
           a(href="javascript:void(0)") политикой конфиденциальности
       .form__success
         .form__success-check
-           include ../assets/icon-system/icon-check
+          include ../assets/icon-system/icon-check
         .form__success-title Заявка успешно отправлена!
         .form__success-subtitle Мы будем рады обсудить ваш проект и помочь вам реализовать все ваши идеи
 
       .form__error
         .form__error-check
-           include ../assets/icon-system/icon-close-white
+          include ../assets/icon-system/icon-close-white
         .form__error-title Что-то пошло не так
         .form__error-subtitle Поробуйте отправить форму позже

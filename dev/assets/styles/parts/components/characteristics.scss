@@ -25,7 +25,7 @@
 
   &__poster-wrapper {
     padding: 50px;
-    background-color: #F5F4FA;
+    background-color: #f5f4fa;
     position: relative;
     height: 100%;
   }
@@ -44,7 +44,9 @@
       object-fit: contain;
       opacity: 0;
       transform: rotateY(90deg);
-      transition: opacity 0.3s ease, transform 0.5s ease-in-out;
+      transition:
+        opacity 0.3s ease,
+        transform 0.5s ease-in-out;
 
       &.active {
         transform: rotateY(0);
@@ -58,7 +60,8 @@
     gap: 96px;
     margin-top: 33px;
 
-    a, span {
+    a,
+    span {
       color: $primary-green;
       font-size: 13px;
       font-weight: 500;
@@ -108,7 +111,7 @@
 
   &__item {
     position: relative;
-    background-color: #F5F4FA;
+    background-color: #f5f4fa;
     max-height: 124px;
     min-height: 124px;
     transition: ease-in-out $transition;
@@ -163,11 +166,11 @@
       background-color: $primary-green;
 
       .characteristics__item-title {
-        color: $white
+        color: $white;
       }
 
       .characteristics__item-text {
-        transform: translateY(100%);
+        transform: translateY(calc(100% - 1px));
         background-color: $primary-green;
         z-index: 3;
       }
@@ -203,7 +206,7 @@
         max-width: 100%;
         min-height: 84px;
         max-height: 126px;
-        background-color: #F5F4FA;
+        background-color: #f5f4fa;
       }
 
       .characteristics__item-text {
@@ -252,7 +255,8 @@
       margin-bottom: 32px;
     }
 
-    &__inner, &__accordions {
+    &__inner,
+    &__accordions {
       display: flex;
       flex-direction: column;
     }
@@ -315,7 +319,7 @@
       width: 100%;
       max-width: 100%;
       overflow: hidden;
-      background-color: #F5F4FA;
+      background-color: #f5f4fa;
 
       &__intro {
         position: relative;
@@ -367,7 +371,7 @@
         transition: $transition ease-in-out;
         color: #f1f1f1;
         opacity: 0;
-        background-color: #F5F4FA;
+        background-color: #f5f4fa;
       }
 
       &__active {
@@ -396,6 +400,5 @@
         }
       }
     }
-
   }
 }

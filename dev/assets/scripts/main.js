@@ -9,6 +9,7 @@ import initConstructive from './modules/constructive'
 import sliderBlock from './modules/sliderBlock'
 import characteristics from './modules/characteristics'
 import accordions from './modules/accordions'
+import smoothScrolling from './modules/smoothScrolling'
 // import preloader from 'preloader-js';
 
 export default function main() {
@@ -23,6 +24,7 @@ export default function main() {
   sliderBlock()
   characteristics()
   accordions()
+  smoothScrolling()
   // setTimeout(() => {
   //     preloader.hide()
   // }, 500)

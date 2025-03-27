@@ -14,40 +14,6 @@ export default function initHeader() {
 
   if (!header) return
 
-  const sectionMapping = {
-    Характеристики: 'kharakteristiki',
-    Конструктив: 'konstruktiv',
-    Конфигуратор: 'konfigurator',
-    Применение: 'primenenie',
-  }
-
-  const smoothScroll = target => {
-    const element = document.querySelector(`.js-${target}`)
-
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-      const newUrl = `/${target}`
-      window.history.pushState({ section: target }, '', newUrl)
-
-      if (burger.classList.contains('active')) {
-        burger.classList.remove('active')
-        enablePageScroll(header)
-      }
-    }
-  }
-
-  const checkUrlAndScroll = () => {
-    const path = window.location.pathname.slice(1)
-    if (
-      path &&
-      sectionMapping[
-        Object.keys(sectionMapping).find(key => sectionMapping[key] === path)
-      ]
-    ) {
-      smoothScroll(path)
-    }
-  }
-
   const checkScroll = () => {
     if (window.scrollY > 5) {
       header.classList.add('scrollable')
@@ -59,18 +25,20 @@ export default function initHeader() {
   headerLinks.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault()
-      const russianName = link.textContent
-      const target = sectionMapping[russianName]
-      smoothScroll(target)
+      if (burger.classList.contains('active')) {
+        burger.classList.remove('active')
+        enablePageScroll(header)
+      }
     })
   })
 
   burgerLinks.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault()
-      const russianName = link.textContent
-      const target = sectionMapping[russianName]
-      smoothScroll(target)
+      if (burger.classList.contains('active')) {
+        burger.classList.remove('active')
+        enablePageScroll(header)
+      }
     })
   })
 
@@ -106,5 +74,4 @@ export default function initHeader() {
 
   window.addEventListener('scroll', checkScroll)
   checkScroll()
-  checkUrlAndScroll()
 }

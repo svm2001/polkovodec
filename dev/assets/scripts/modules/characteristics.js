@@ -1,8 +1,17 @@
 export default function characteristics() {
-  const items = document.querySelectorAll('.characteristics__item')
-  const images = document.querySelectorAll('.characteristics__poster img.poster')
-  const container = document.querySelector('.characteristics__items')
-  const mobAccordions = document.querySelectorAll('.characteristics__accordions .accordion')
+  const characeristics = document.querySelector('.characteristics')
+
+
+  if (!characeristics) return
+
+  const items = characeristics.querySelectorAll('.characteristics__item')
+  const images = characeristics.querySelectorAll(
+    '.characteristics__poster img.poster',
+  )
+  const container = characeristics.querySelector('.characteristics__items')
+  const mobAccordions = characeristics.querySelectorAll(
+    '.characteristics__accordions .accordion',
+  )
   const isDesktopRes = window.innerWidth > 1280
 
   const displayImages = (index = 0) => {
@@ -16,13 +25,14 @@ export default function characteristics() {
     images[index].classList.add('active')
   }
 
-  const handleIconTransform = (icon, textHeight, reset = false) => icon.style.transform = reset
-    ? 'translateY(0px)'
-    : `translateY(${textHeight}px)`
+  const handleIconTransform = (icon, textHeight, reset = false) =>
+    (icon.style.transform = reset
+      ? 'translateY(0px)'
+      : `translateY(${textHeight}px)`)
 
   const desktop = () => {
     if (mobAccordions) mobAccordions.forEach(accordion => accordion.remove())
-    
+
     items.forEach((item, index) => {
       const text = item.querySelector('.characteristics__item-text')
       const icon = item.querySelector('.characteristics__item-icon')
@@ -33,15 +43,17 @@ export default function characteristics() {
         displayImages(index)
       })
 
-      item.addEventListener('mouseleave', () => !isLastItem
-        ? handleIconTransform(icon, 0, true)
-        : '')
+      item.addEventListener('mouseleave', () =>
+        !isLastItem ? handleIconTransform(icon, 0, true) : '',
+      )
     })
   }
 
   const mobile = () => {
     if (items) items.forEach(item => item.remove())
-    mobAccordions.forEach((item, index) => item.addEventListener('mouseenter', () => displayImages(index)))
+    mobAccordions.forEach((item, index) =>
+      item.addEventListener('mouseenter', () => displayImages(index)),
+    )
   }
 
   displayImages()

@@ -23,7 +23,7 @@ mixin constructive(props = defaultHeroProps, ...dataset)
     const checkProps = {
         classes: props.classes ? props.classes : defaultConstructiveProps.classes,
     }
-  section.js-konstruktiv.constructive
+  section(data-smooth-scrolling="constructive").constructive
     .container
       h2.constructive__title= constructiveData.title
       .constructive__content
@@ -33,12 +33,16 @@ mixin constructive(props = defaultHeroProps, ...dataset)
               .constructive__item(data-image-index=item.imageIndex)
                 .constructive__item-text= item.text
                 .constructive__item-dot
-        .constructive__image(data-default-image="./images/constructive/default.png")
-          img(src="./images/constructive/default.png", alt=constructiveData.title)
+        .constructive__image(
+          data-default-image="./images/constructive/default.png"
+        )
+          img(
+            src="./images/constructive/default.png",
+            alt=constructiveData.title
+          )
         .constructive__list.constructive__list--right
           each item, index in constructiveData.items
             if index >= 5
               .constructive__item(data-image-index=item.imageIndex)
                 .constructive__item-dot
                 .constructive__item-text= item.text
-
