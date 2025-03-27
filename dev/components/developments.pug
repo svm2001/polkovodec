@@ -1,5 +1,4 @@
 -
-
   const developmentsData = {
       title: 'Наши новые разработки',
       items: [
@@ -41,8 +40,11 @@ mixin developments
         each item in developmentsData.items
           .developments__list-item
             .developments__list-item-static
-                span.developments__list-item-static-label= item.label
-                img.developments__list-item-static-logo(src=`./images/developments/${item.logo}.png`, alt=item.title)
+              span.developments__list-item-static-label= item.label
+              img.developments__list-item-static-logo(
+                src=`./images/developments/${item.logo}.png`,
+                alt=item.title
+              )
             .developments__list-item-image
               img(src=`./images/developments/${item.img}.jpg`, alt=item.title)
             .developments__list-item-content-shadow

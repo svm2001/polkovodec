@@ -80,12 +80,16 @@
           left: 0;
           width: 100%;
           z-index: 2;
-          background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.14889705882352944) 100%);
+          background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.6) 0%,
+            rgba(0, 0, 0, 0.14889705882352944) 100%
+          );
         }
       }
 
       &-title {
-        color:$white;
+        color: $white;
         margin: 0;
         margin-bottom: 21px;
         max-width: 75%;
@@ -121,10 +125,16 @@
         left: 0;
         margin: 0;
         width: 100%;
-        background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.14889705882352944) 100%);
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.6) 0%,
+          rgba(0, 0, 0, 0.14889705882352944) 100%
+        );
         transform: translateY(50%) rotateX(90deg);
         transform-origin: bottom;
-        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        transition:
+          transform 0.5s ease-in-out,
+          opacity 0.5s ease-in-out;
         opacity: 0;
         perspective: 1000px;
         backface-visibility: hidden;
@@ -149,17 +159,25 @@
 
     &__list {
       &-item {
-        min-height: calc(408px + (600 - 408) * ((100vw - 768px) / (1280 - 768)));
-        max-height: calc(408px + (600 - 408) * ((100vw - 768px) / (1280 - 768)));
+        min-height: calc(
+          408px + (600 - 408) * ((100vw - 768px) / (1280 - 768))
+        );
+        max-height: calc(
+          408px + (600 - 408) * ((100vw - 768px) / (1280 - 768))
+        );
 
         &-image {
-          min-height: calc(408px + (600 - 408) * ((100vw - 768px) / (1280 - 768)));
-          max-height: calc(408px + (600 - 408) * ((100vw - 768px) / (1280 - 768)));
+          min-height: calc(
+            408px + (600 - 408) * ((100vw - 768px) / (1280 - 768))
+          );
+          max-height: calc(
+            408px + (600 - 408) * ((100vw - 768px) / (1280 - 768))
+          );
         }
 
         &-trigger {
           height: 30px;
-          padding: 6px 20px!important;
+          padding: 6px 20px !important;
         }
 
         &-static {
@@ -179,8 +197,12 @@
         }
 
         &-content {
-          min-height: calc(408px + (600 - 408) * ((100vw - 768px) / (1280 - 768)));
-          max-height: calc(408px + (600 - 408) * ((100vw - 768px) / (1280 - 768)));
+          min-height: calc(
+            408px + (600 - 408) * ((100vw - 768px) / (1280 - 768))
+          );
+          max-height: calc(
+            408px + (600 - 408) * ((100vw - 768px) / (1280 - 768))
+          );
           padding: 19px;
         }
 
@@ -208,13 +230,21 @@
         max-height: calc(400px + (768 - 400) * ((100vw - 360px) / (768 - 360)));
 
         &-image {
-          min-height: calc(400px + (768 - 400) * ((100vw - 360px) / (768 - 360)));
-          max-height: calc(400px + (768 - 400) * ((100vw - 360px) / (768 - 360)));
+          min-height: calc(
+            400px + (768 - 400) * ((100vw - 360px) / (768 - 360))
+          );
+          max-height: calc(
+            400px + (768 - 400) * ((100vw - 360px) / (768 - 360))
+          );
         }
 
         &-content {
-          min-height: calc(400px + (768 - 400) * ((100vw - 360px) / (768 - 360)));
-          max-height: calc(400px + (768 - 400) * ((100vw - 360px) / (768 - 360)));
+          min-height: calc(
+            400px + (768 - 400) * ((100vw - 360px) / (768 - 360))
+          );
+          max-height: calc(
+            400px + (768 - 400) * ((100vw - 360px) / (768 - 360))
+          );
           padding: 19px;
         }
       }

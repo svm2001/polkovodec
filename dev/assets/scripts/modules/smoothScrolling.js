@@ -3,8 +3,10 @@ export default function smoothScrolling() {
 
   if (!anchors.length) return
 
-  const scrollToSection = (blockID) => {
-    const element = document.querySelector(`[data-smooth-scrolling="${blockID}"]`)
+  const scrollToSection = blockID => {
+    const element = document.querySelector(
+      `[data-smooth-scrolling="${blockID}"]`,
+    )
     if (element) {
       element.scrollIntoView({
         behavior: 'smooth',

@@ -40,7 +40,10 @@ mixin header(props = defaultHeaderProps, ...dataset)
             include ../assets/icon-system/icon-logo-dark
           nav
             each link in checkProps.links
-              a.header__link(href="javascript:void(0)" data-smooth-scrolling=`#${link.url}`)= link.name
+              a.header__link(
+                href="javascript:void(0)",
+                data-smooth-scrolling=`#${link.url}`
+              )= link.name
           button.header__burger-init
             span
             span
@@ -88,7 +91,10 @@ mixin header(props = defaultHeaderProps, ...dataset)
           .form__error-subtitle Поробуйте отправить форму позже
     .burger__nav
       each link in checkProps.links
-        a.burger__link(href="javascript:void(0)" data-smooth-scrolling=`#${link.url}`)= link.name
+        a.burger__link(
+          href="javascript:void(0)",
+          data-smooth-scrolling=`#${link.url}`
+        )= link.name
 
     .burger__info
       +btn({ classes: "burger__btn", name: "Оставить заявку" })

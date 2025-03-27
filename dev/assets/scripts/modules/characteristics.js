@@ -1,7 +1,6 @@
 export default function characteristics() {
   const characeristics = document.querySelector('.characteristics')
 
-
   if (!characeristics) return
 
   const items = characeristics.querySelectorAll('.characteristics__item')

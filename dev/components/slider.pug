@@ -8,7 +8,7 @@ mixin slider(props = defaultSliderProps, ...dataset)
     const checkProps = {
         classes: props.classes ? props.classes : defaultSliderProps.classes,
     }
-  section.slider(data-smooth-scrolling="application" class=checkProps.classes)
+  section.slider(data-smooth-scrolling="application", class=checkProps.classes)
     .container
       .swiper
         .swiper-wrapper

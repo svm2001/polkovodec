@@ -49,7 +49,7 @@ mixin characteristics(props = defaultCharacteristicsProps, ...dataset)
     const checkProps = {
         classes: props.classes ? props.classes : defaultCharacteristicsProps.classes,
     }
-  section(data-smooth-scrolling="characteristics").characteristics
+  section.characteristics(data-smooth-scrolling="characteristics")
     .container
       h2.characteristics__title= characteristicsData.title
       .characteristics__inner
@@ -103,10 +103,16 @@ mixin characteristics(props = defaultCharacteristicsProps, ...dataset)
                 )
       .characteristics__info
         .characteristics__certificate
-          a.characteristics__certificate-item(href="javascript:void(0)", download="/")
+          a.characteristics__certificate-item(
+            href="javascript:void(0)",
+            download="/"
+          )
             img(src="./images/characteristics/file.svg", alt="file")
             span Длиное название сертификата
-          a.characteristics__certificate-item(href="javascript:void(0)", download="/")
+          a.characteristics__certificate-item(
+            href="javascript:void(0)",
+            download="/"
+          )
             img(src="./images/characteristics/file.svg", alt="file")
             span Длиное название сертификата
         .characteristics__certificate

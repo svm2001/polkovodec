@@ -23,7 +23,7 @@ mixin constructive(props = defaultHeroProps, ...dataset)
     const checkProps = {
         classes: props.classes ? props.classes : defaultConstructiveProps.classes,
     }
-  section(data-smooth-scrolling="constructive").constructive
+  section.constructive(data-smooth-scrolling="constructive")
     .container
       h2.constructive__title= constructiveData.title
       .constructive__content
