@@ -157,6 +157,14 @@
       bottom: 15px;
       transition: ease-in-out $transition;
 
+      width: 55px;
+      height: 55px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
       &--hover {
         display: none;
       }
