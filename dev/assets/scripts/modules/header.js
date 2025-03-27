@@ -22,15 +22,19 @@ export default function initHeader() {
     }
   }
 
-  headerLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault()
-      if (burger.classList.contains('active')) {
-        burger.classList.remove('active')
-        enablePageScroll(header)
-      }
-    })
-  })
+  const handleHeaderLinkClick = (e) => {
+    e.preventDefault()
+    if (burger.classList.contains('active')) {
+      burger.classList.remove('active')
+      enablePageScroll(header)
+    }
+  }
+
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.header__link')) {
+      handleHeaderLinkClick(e)
+    }
+  }, { passive: false })
 
   burgerLinks.forEach(link => {
     link.addEventListener('click', e => {
@@ -72,6 +76,6 @@ export default function initHeader() {
     })
   }
 
-  window.addEventListener('scroll', checkScroll)
+  window.addEventListener('scroll', checkScroll, { passive: true })
   checkScroll()
 }

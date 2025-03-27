@@ -36,7 +36,15 @@ export default function constructive() {
 
   const constructiveList = document.querySelector('.constructive__list')
   constructiveList.addEventListener('mouseleave', handleMouseLeave)
-  constructiveItems.forEach(item =>
-    item.addEventListener('mouseenter', handleMouseEnter),
-  )
+
+  const container = document.querySelector('.constructive__list')
+  container.addEventListener('mouseenter', (e) => {
+    const item = e.target.closest('.constructive__item')
+    if (item) {
+      const index = Array.from(constructiveItems).indexOf(item)
+      if (index !== -1) {
+        handleMouseEnter(e)
+      }
+    }
+  }, { passive: true })
 }
