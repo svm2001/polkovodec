@@ -24,12 +24,22 @@ mixin hero(props = defaultHeroProps, ...dataset)
       img.lazy.hero__bg-full(
         data-src="./images/hero/bg.jpg",
         src="./images/no-image.jpg",
-        alt="img"
+        alt="Фоновое изображение",
+        width="1920",
+        height="1080",
+        loading="lazy",
+        fetchpriority="low"
       )
       img.lazy.hero__bg-center(
         data-src="./images/hero/locker.webp",
         src="./images/no-image.jpg",
-        alt="img"
+        alt="Шкаф Добрыня",
+        width="800",
+        height="600",
+        loading="lazy",
+        fetchpriority="high",
+        srcset="./images/hero/locker-mobile.webp 400w, ./images/hero/locker.webp 800w",
+        sizes="(max-width: 768px) 400px, 800px"
       )
     .container
       .hero__inner
