@@ -34,6 +34,7 @@
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
+      height: 92%;
     }
   }
 
@@ -98,11 +99,12 @@
         min-height: 85dvh;
         object-fit: cover;
         width: 100%;
+        height: 80%;
       }
     }
 
     &__title {
-      line-height: 150%;
+      line-height: 120%;
     }
 
     &__inner {
