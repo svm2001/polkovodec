@@ -30,19 +30,6 @@ export default function main() {
   // setTimeout(() => {
   //     preloader.hide()
   // }, 500)
-
-  // SmoothScroll({
-  //     animationTime : 500,
-  //     stepSize : 100,
-  //     accelerationDelta : 300,
-  //     accelerationMax : 2,
-  //     keyboardSupport : true,
-  //     arrowScroll : 50,
-  //     pulseAlgorithm : false,
-  //     pulseScale : 4,
-  //     pulseNormalize : 1,
-  //     touchpadSupport : true,
-  // })
 }
 
 document.addEventListener('DOMContentLoaded', () => {
