@@ -33,10 +33,7 @@ export default function main() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  main()
-
   const lazyElements = document.querySelectorAll('.lazy-load');
-    
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -54,4 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
   lazyElements.forEach(element => {
     observer.observe(element);
   });
+
+  main()
 })

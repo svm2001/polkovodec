@@ -59,14 +59,12 @@ mixin characteristics(props = defaultCharacteristicsProps, ...dataset)
               .characteristics__item-inner
                 .characteristics__item-title= item.title
               .characteristics__item-icon
-                img.lazy.characteristics__item-icon--static(
-                  src="./images/no-image.jpg",
-                  data-src=`./images/characteristics/icons/${item.icon}.svg`,
+                img.characteristics__item-icon--static(
+                  src=`./images/characteristics/icons/${item.icon}.svg`,
                   alt="img"
                 )
-                img.lazy.characteristics__item-icon--hover(
-                  src="./images/no-image.jpg",
-                  data-src=`./images/characteristics/icons/${item.iconHover}.svg`,
+                img.characteristics__item-icon--hover(
+                  src=`./images/characteristics/icons/${item.iconHover}.svg`,
                   alt="img"
                 )
               .characteristics__item-text= item.text
@@ -74,14 +72,12 @@ mixin characteristics(props = defaultCharacteristicsProps, ...dataset)
           each item in characteristicsData.items
             .accordion
               .accordion__icon
-                img.lazy.accordion__icon--static(
-                  src="./images/no-image.jpg",
-                  data-src=`./images/characteristics/icons/${item.icon}.svg`,
+                img.accordion__icon--static(
+                  src=`./images/characteristics/icons/${item.icon}.svg`,
                   alt="img"
                 )
-                img.lazy.accordion__icon--hover(
-                  src="./images/no-image.jpg",
-                  data-src=`./images/characteristics/icons/${item.iconHover}.svg`,
+                img.accordion__icon--hover(
+                  src=`./images/characteristics/icons/${item.iconHover}.svg`,
                   alt="img"
                 )
               .accordion__intro
