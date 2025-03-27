@@ -1,6 +1,7 @@
 .footer {
   background-color: $black;
   padding: 136px 0 27px 0;
+  margin-top: 128px;
 
   &__body {
     display: flex;
@@ -131,6 +132,7 @@
 
 @media (max-width: 1280px) {
   .footer {
+    margin-top: 0;
     padding: 80px 0 27px 0;
 
     &__body {

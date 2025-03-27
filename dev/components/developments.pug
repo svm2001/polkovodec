@@ -1,0 +1,54 @@
+-
+
+  const developmentsData = {
+      title: 'Наши новые разработки',
+      items: [
+          {
+              title: 'Зарядное устройство в защищенном корпусе',
+              text: [
+                  'Универсальное мобильное устройство для оборудования связи, электроники, РЭБ.',
+                  'Множество протоколов быстрой зарядки.',
+                  'Компактность, небольшой вес.',
+                  'Высокая энергоёмкость'
+              ].join('\n'),
+              img: '1',
+              label: 'запантентовано',
+              logo: 'logo',
+              button: 'Подробнее'
+          },
+          {
+              title: 'Наземная станция управления БПЛА',
+              text: [
+                  'Мобильный пункт управления для дистанционно-управляемых систем.',
+                  'Компактность, надежность и безотказность в экстремальных условиях.',
+                  'Класс защиты – до IP67.',
+                  'Комплектация по ТЗ'
+              ].join('\n'),
+              img: '2',
+              label: 'скоро в продаже',
+              logo: 'logo',
+              button: 'Подробнее'
+          }
+      ]
+  }
+
+mixin developments
+  include ../ui/btn
+  section.developments
+    .container
+      h2.developments__title= developmentsData.title
+      .developments__list
+        each item in developmentsData.items
+          .developments__list-item
+            .developments__list-item-static
+                span.developments__list-item-static-label= item.label
+                img.developments__list-item-static-logo(src=`./images/developments/${item.logo}.png`, alt=item.title)
+            .developments__list-item-image
+              img(src=`./images/developments/${item.img}.jpg`, alt=item.title)
+            .developments__list-item-content-shadow
+            .developments__list-item-content
+              h3.developments__list-item-title= item.title
+              +btn({ type: 'button', name: 'Подробнее', classes: 'developments__list-item-trigger' })
+              ul.developments__list-item-text
+                each text in item.text.split('\n')
+                  li.developments__list-item-text-content= text
