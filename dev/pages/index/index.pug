@@ -11,7 +11,10 @@ block content
   .wrapper
     +hero
     +characteristics
-    +constructive
+    .lazy-load(data-lazy="constructive")
+      +constructive
+    .lazy-load(data-lazy="slider")
+      +slider
+    .lazy-load(data-lazy="developments")
+      +developments
     //.section(data-smooth-scrolling="configurator")
-    +slider
-    +developments
