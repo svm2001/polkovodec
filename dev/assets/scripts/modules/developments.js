@@ -23,7 +23,7 @@ export default function developments() {
         '.developments__list-item-content-shadow',
       )
       const shadowHeight = titleHeight + btnHeight + 21 + 5
-      
+
       shadow.style.height = `${shadowHeight}px`
     })
   } else {
