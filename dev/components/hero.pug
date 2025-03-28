@@ -21,52 +21,16 @@ mixin hero(props = defaultHeroProps, ...dataset)
     }
   section.section.hero
     .hero__bg
-      picture
-        source(
-          media="(max-width: 768px)",
-          srcset="./images/hero/bg-mobile.webp",
-          type="image/webp"
-        )
-        source(
-          media="(max-width: 768px)",
-          srcset="./images/hero/bg-mobile.jpg",
-          type="image/jpeg"
-        )
-        source(
-          srcset="./images/hero/bg.webp",
-          type="image/webp"
-        )
-        img.hero__bg-full(
-          src="./images/hero/bg.jpg",
-          alt="Background image",
-          width="1920",
-          height="1080",
-          loading="eager",
-          fetchpriority="high"
-        )
-      picture
-        source(
-          media="(max-width: 768px)",
-          srcset="./images/hero/locker-mobile.webp",
-          type="image/webp"
-        )
-        source(
-          media="(max-width: 768px)",
-          srcset="./images/hero/locker-mobile.jpg",
-          type="image/jpeg"
-        )
-        source(
-          srcset="./images/hero/locker.webp",
-          type="image/webp"
-        )
-        img.hero__bg-center(
-          src="./images/hero/locker.jpg",
-          alt="Locker image",
-          width="800",
-          height="600",
-          loading="eager",
-          fetchpriority="high"
-        )
+      img.lazy.hero__bg-full(
+        data-src="./images/hero/bg.jpg",
+        src="./images/no-image.jpg",
+        alt="img"
+      )
+      img.lazy.hero__bg-center(
+        data-src="./images/hero/locker.webp",
+        src="./images/no-image.jpg",
+        alt="img"
+      )
     .container
       .hero__inner
         h1.hero__title
