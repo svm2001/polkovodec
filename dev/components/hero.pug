@@ -38,10 +38,10 @@ mixin hero(props = defaultHeroProps, ...dataset)
       )
 
     .container
-      .hero__inner
-        h1.hero__title
-          .hero__title-text(loading="lazy")= checkProps.title
-          .hero__title-text.hero__title-text--mob(loading="lazy")= checkProps.titleMob
-          .hero__title-marked= checkProps.markedTitle
-        .hero__subtitle= checkProps.subtitle
-        +btn({ name: checkProps.btnName, })
+      //- .hero__inner
+      //-   h1.hero__title
+      //-     .hero__title-text= checkProps.title
+      //-     .hero__title-text.hero__title-text--mob= checkProps.titleMob
+      //-     .hero__title-marked= checkProps.markedTitle
+      //-   .hero__subtitle= checkProps.subtitle
+      //-   +btn({ name: checkProps.btnName, })
