@@ -60,7 +60,7 @@ mixin header(props = defaultHeaderProps, ...dataset)
   .burger
     .burger__top
       include ../assets/icon-system/icon-logo-dark
-      button.burger__close
+      button.burger__close(aria-label="Закрыть" aria-labelledby="button")
         include ../assets/icon-system/icon-close
     .burger__form
       form(action, data-validate, novalidate)
