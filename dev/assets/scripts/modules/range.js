@@ -1,34 +1,38 @@
-import * as noUiSlider from 'nouislider'
-
 export default function range() {
-  const ranges = document.querySelectorAll('[data-range="range"]')
+    const ranges = document.querySelectorAll('.range')
+    
+    if (!ranges.length) return
 
-  if (!ranges.length) return
+    ranges.forEach(range => {
+        const buttons = range.querySelectorAll('.range__points-item')
+        let selectedValue = Number(range.getAttribute('data-range-selected'))
+        const prefix = range.getAttribute('data-range-prefix') || ''
+        const heightRangeContainer = document.querySelector('.configurator__slide-item-title-value')
 
-  ranges.forEach(item => {
-    const range = item.querySelector('[data-range="range-line"]'),
-      start = +range.getAttribute('data-range-start'),
-      end = +range.getAttribute('data-range-end'),
-      min = +range.getAttribute('data-range-min'),
-      max = +range.getAttribute('data-range-max'),
-      valueMin = item.querySelector('[data-range="value-min"]'),
-      valueMax = item.querySelector('[data-range="value-max"]')
+        const updateHeightContainer = (value) => heightRangeContainer 
+          ? heightRangeContainer.textContent = `${value}${prefix}` 
+          : ''
 
-    noUiSlider.create(range, {
-      start: [start, end],
-      connect: true,
-      range: {
-        min: min,
-        max: max,
-      },
+        buttons.forEach(button => {
+            const value = Number(button.getAttribute('data-range-value'))
+            if (value === selectedValue) {
+                button.classList.add('selected')
+                updateHeightContainer(value)
+            }
+        })
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const value = Number(button.getAttribute('data-range-value'))
+                
+                if (value === selectedValue) return
+
+                buttons.forEach(btn => btn.classList.remove('selected'))
+                button.classList.add('selected')
+                range.setAttribute('data-range-selected', value)
+                selectedValue = value
+                updateHeightContainer(value)
+            })
+        })
     })
-
-    range.noUiSlider.on('update', (values, handle) => {
-      if (handle) {
-        valueMax.innerHTML = `${Math.round(values[handle])} м<sup>2</sup>`
-      } else {
-        valueMin.innerHTML = `${Math.round(values[handle])} м<sup>2</sup>`
-      }
-    })
-  })
 }

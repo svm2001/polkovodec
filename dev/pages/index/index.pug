@@ -8,14 +8,17 @@ block content
   include ../../components/slider
   include ../../components/characteristics
   include ../../components/developments
+  include ../../components/configurator/configurator
+  
   .wrapper
     +hero
     .lazy-load(data-lazy="characteristics")
       +characteristics
     .lazy-load(data-lazy="constructive")
       +constructive
+    .lazy-load(data-lazy="configurator")
+      +configurator
     .lazy-load(data-lazy="slider")
       +slider
     .lazy-load(data-lazy="developments")
       +developments
-    //.section(data-smooth-scrolling="configurator")

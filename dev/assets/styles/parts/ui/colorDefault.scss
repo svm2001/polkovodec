@@ -1,0 +1,113 @@
+.colorDefault {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &__title {
+        font-size: 16px;
+        color: $black-500;
+    }
+
+    &__list {
+        display: grid;  
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        align-items: center;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        cursor: pointer;
+
+        &-title {
+            white-space: nowrap;
+        }
+
+        &-value {
+            padding: 8px;
+            border-radius: 50%;
+
+            &-dot {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: var(--color);
+                position: relative;
+                
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 72px;
+                    height: 72px;
+                    border-radius: 50%;
+                    border: 2px solid $white;
+                    opacity: 0;
+                    transition: $transition ease;
+                }
+            }
+        }
+
+        &.active .colorDefault__item-value-dot:before {
+            opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .colorDefault {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    
+        &__title {
+            font-size: 14px;
+            color: $black-500;
+        }
+    
+        &__list {
+            display: grid;  
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            align-items: center;
+        }
+    
+        &__item {
+            gap: 4px;
+            font-size: 14px;
+    
+            &-value {
+                &-dot {
+                    width: 48px;
+                    height: 48px;
+                    
+                    &:before {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .colorDefault {
+        flex-direction: row;
+        align-items: center;
+
+        &__list {
+            gap: 3px;
+        }
+
+        &__item-value {
+            padding: 0;
+        }
+    }
+}

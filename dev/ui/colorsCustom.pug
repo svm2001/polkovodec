@@ -1,0 +1,29 @@
+-
+    const defaultColorsCustomProps = {
+        classes: '',
+        title: '',
+    }
+
+mixin colorsCustom(props = defaultColorsCustomProps, ...dataset)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultColorsCustomProps.classes,
+            title: props.title ? props.title : defaultColorsCustomProps.title
+        }
+
+    .colorsCustom(class=`${checkProps.classes}` data-custom-color="")&attributes(...dataset)
+        .colorsCustom__title= props.title
+        button.colorsCustom__color(title="Укажите цвет в формате RAL")
+            .colorsCustom__color-inner
+                .colorsCustom__color-inner-wrapper
+            span.colorsCustom__color-selected-value ral 0000   
+        .colorsCustom__block 
+            .colorsCustom__block-title 
+                | Введите цвет RAL
+                button.colorsCustom__block-close(title="Закрыть") 
+                    include ../assets/icon-system/icon-cross
+            .colorsCustom__block-input-wrapper
+                input.colorsCustom__block-input-field(type="number" placeholder="RAL 1000")
+                div.colorsCustom__block-input-validation
+                button.colorsCustom__block-confirm(title="Подтвердить цвет")
+                    include ../assets/icon-system/icon-arrow-right

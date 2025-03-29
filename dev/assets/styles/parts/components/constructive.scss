@@ -1,5 +1,6 @@
 .constructive {
   padding-top: 120px;
+  padding-bottom: 80px;
 
   &__title {
     max-width: 352px;
@@ -77,6 +78,7 @@
 @media (max-width: 1280px) {
   .constructive {
     padding-top: 80px;
+    padding-bottom: 80px;
 
     &__title {
       max-width: 100%;

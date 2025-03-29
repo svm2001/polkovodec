@@ -14,13 +14,10 @@ export default function initHeader() {
 
   if (!header) return
 
-  const checkScroll = () => {
-    if (window.scrollY > 5) {
-      header.classList.add('scrollable')
-    } else {
-      header.classList.remove('scrollable')
-    }
-  }
+  const checkScroll = () => window.scrollY > 5 
+    ? header.classList.add('scrollable') 
+    : header.classList.remove('scrollable')
+
 
   const handleHeaderLinkClick = (e) => {
     e.preventDefault()
@@ -39,10 +36,9 @@ export default function initHeader() {
   burgerLinks.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault()
-      if (burger.classList.contains('active')) {
-        burger.classList.remove('active')
-        enablePageScroll(header)
-      }
+      if (burger.classList.contains('active')) burger.classList.remove('active')
+      enablePageScroll(header)
+
     })
   })
 

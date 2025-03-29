@@ -37,14 +37,6 @@ export default function validate() {
             },
           }
         },
-        checkingNumbers = (input, msg) => {
-          const field = input.querySelector('input')
-          if (field.value.match(dataReqexp.numbers)) {
-            error(input).remove()
-          } else {
-            error(input, msg).set()
-          }
-        },
         validateTextarea = textarea => {
           const field = textarea.querySelector('textarea'),
             valueField = field.value

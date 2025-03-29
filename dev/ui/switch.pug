@@ -1,0 +1,27 @@
+-
+    const defaultSwitchProps = {
+        classes: '',
+        values: [],
+        selected: ''
+    }
+
+mixin switch(props = defaultSwitchProps, ...dataset)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSwitchProps.classes,
+            values: props.values ? props.values : defaultSwitchProps.values,
+            selected: props.selected ? props.selected : defaultSwitchProps.selected
+        }
+
+    .switch-wrapper(class=`${checkProps.classes}` data-switch-selected=checkProps.selected)&attributes(...dataset)
+        .switch
+            .button.button--switch(
+                class=checkProps.selected === checkProps.values[0] ? 'active' : ''
+                data-switch-value=checkProps.values[0]
+            )
+                span.button__text= checkProps.values[0]
+            .button.button--switch(
+                class=checkProps.selected === checkProps.values[1] ? 'active' : ''
+                data-switch-value=checkProps.values[1]
+            )
+                span.button__text= checkProps.values[1]

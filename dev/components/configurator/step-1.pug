@@ -1,0 +1,68 @@
+include ../../ui/range
+include ../../ui/radio
+include ../../ui/switch
+include ../../ui/colorsDefault
+include ../../ui/colorsCustom
+.swiper-slide(data-step-number="1" data-step-description="Установите габариты и характеристики шкафа, чтобы он идеально вписался в пространство вашего помещения или мобильного пункта.")
+    .configurator__slide.configurator__slide--1
+        .configurator__slide-inner
+            .configurator__slide-item.configurator__slide-item--height.js-set-height(data-is-next-step="true")
+                .configurator__slide-item-title
+                    span Высота стойки
+                    span.configurator__slide-item-title-value
+                +range({ 
+                    values: [12, 18, 21, 24, 36, 42],
+                    selected: 18,
+                    prefix: 'U'
+                })   
+            .configurator__slide-item.configurator__slide-item--depth.js-set-depth(data-is-next-step="false" data-depth='')
+                .configurator__slide-item-title
+                    span Глубина стойки   
+                .radios 
+                    +radio({ text: '400 мм', checked: false, name: 'depth' })
+                    +radio({ text: '600 мм', checked: false, name: 'depth' })
+                    +radio({ text: '800 мм', checked: false, name: 'depth' }) 
+                    +radio({ text: '1000 мм', checked: false, name: 'depth' })
+                    +radio({ text: '1200 мм', checked: false, name: 'depth' })
+            .configurator__slide-item.configurator__slide-item--variant.js-set-variants
+                .configurator__slide-item-title
+                    span Варианты комплектации дверей
+                .variants 
+                    .variants__item.js-variant-front(data-is-next-step="false" data-front-door='')
+                        .variants__item-title Фронтальная дверь
+                        .variants__item-radios
+                            +radio({ text: 'одностворчатая', checked: false, name: 'front-door' })
+                            +radio({ text: 'двустворчатая', checked: false, name: 'front-door' })
+                    .variants__item.js-variant-back(data-is-next-step="false" data-back-door='')
+                        .variants__item-title Задняя дверь
+                        .variants__item-radios
+                            +radio({ text: 'одностворчатая', checked: false, name: 'back-door' })
+                            +radio({ text: 'двустворчатая', checked: false, name: 'back-door' })
+            .configurator__slide-item.configurator__slide-item--execution.js-set-execution(data-is-next-step="true")
+                .configurator__slide-item-title
+                    span Исполнение   
+                +switch({
+                    values: ['стационарное', 'мобильное'],
+                    selected: 'стационарное'
+                }) 
+            .configurator__slide-item.configurator__slide-item--colors.js-set-color(data-is-next-step="false")
+                .configurator__slide-item-title
+                    span Цвет корпуса   
+                .colors
+                    +colorsDefault({
+                        title: 'Готовые цвета',
+                        colors: [
+                            { name: 'черный', value: '#000000' },
+                            { name: 'серый', value: '#8E8E8E' },
+                            { name: 'темно-зеленый', value: '#006039' },
+                        ]
+                    })
+                    +colorsCustom({
+                        title: 'Ваш цвет',
+                        messageText: 'Введите цвет RAL'
+                    })
+
+        .configurator__slide-buttons
+            .configurator__slide-buttons-step-1 
+                .configurator__slide-buttons-error ⚠️ Все поля обязательны для заполнения 
+                +btn({name: 'Далее', classes: 'configurator__slide-btn js-step-1-2'})

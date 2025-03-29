@@ -11,6 +11,11 @@ import characteristics from './modules/characteristics'
 import accordions from './modules/accordions'
 import smoothScrolling from './modules/smoothScrolling'
 import developments from './modules/developments'
+import configurator from './modules/configurator'
+import range from './modules/range'
+import switcher from './modules/switch'
+import colorDefault from './modules/color-default'
+import colorCustom from './modules/color-custom'
 // import preloader from 'preloader-js';
 
 export default function main() {
@@ -27,6 +32,12 @@ export default function main() {
   accordions()
   smoothScrolling()
   developments()
+  configurator()
+  range()
+  switcher()
+  colorDefault()
+  colorCustom()
+
   // setTimeout(() => {
   //     preloader.hide()
   // }, 500)
@@ -52,5 +63,4 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(element);
   });
 
-  main()
 })

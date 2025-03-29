@@ -1,0 +1,42 @@
+-
+  const defaultConfiguratorProps = {
+      classes: '',
+  }
+
+  const configuratorStatic = {
+    title: {
+      marked: 'Создайте свой',
+      default: 'телекоммуникационный шкаф ДОБРЫНЯ©'
+    },
+  }
+
+  
+
+mixin configurator(props = defaultConfiguratorProps, ...dataset)
+  -
+    const checkProps = {
+        classes: props.classes ? props.classes : defaultConfiguratorProps.classes,
+    }
+  section.configurator(data-smooth-scrolling="configurator")
+    .container 
+      .configurator__body 
+        .configurator__description 
+          h2.configurator__title 
+            div.configurator__title-marked= configuratorStatic.title.marked
+            div.configurator__title-default= configuratorStatic.title.default
+            div.configurator__title-default--mob телекоммуникац.
+              br
+              | шкаф ДОБРЫНЯ© 
+          .configurator__step 
+            .configurator__step-number 
+              | Шаг&nbsp;
+              span.configurator__step-number-current
+            .configurator__step-description 
+
+        .configurator__slider 
+          .swiper
+            .swiper-wrapper
+              include ./step-1
+              include ./step-2
+              include ./step-3
+      
