@@ -45,6 +45,13 @@
   &__submit-form {
     width: 100%;
     height: 40px;
+    span {
+      color: $black;
+    }
+
+    &:hover span {
+      color:$white
+    }
   }
 
   &__slide-btn {
