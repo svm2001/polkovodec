@@ -227,12 +227,16 @@
     
             &-input-wrapper {
                 button {
-                    top: -4px;
+                    top: 0;
                 }
             }
     
             &-input-validation {
                 margin-top: 8px;
+            }
+
+            &-input-wrapper input {
+                padding: 8px 0;
             }
         }
     }
