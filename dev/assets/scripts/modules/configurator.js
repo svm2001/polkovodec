@@ -78,7 +78,7 @@ export default function configurator() {
 
     const scrollToStart = () => {
         configurator.scrollIntoView({
-            behavior: 'smooth',
+            behavior: 'instant',
             block: 'start'
         });
     }

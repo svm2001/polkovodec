@@ -46,6 +46,11 @@ export default function colorCustom() {
                 fixedColorBlock.setAttribute('data-default-color-selected', '');
                 fixedColorBlock.setAttribute('data-color-default-name-selected', '');
             }
+
+            colorSelect.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
         } else {
             colorMain.setAttribute('data-is-next-step', false)
             colorMain.setAttribute('data-color-end', '')
