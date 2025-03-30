@@ -178,7 +178,7 @@ mixin accessorises(props = defaultAccessorisesProps, ...dataset)
     .accessorises__title Аксессуары
     .accessorises__list
       each accessorise in accessorisesData
-        button.accessorises__item(
+        .accessorises__item(
           class={ "accessorises__item--img-full": accessorise.imgFull },
           data-tooltip=accessorise.tooltip
         )
@@ -205,7 +205,7 @@ mixin accessorises(props = defaultAccessorisesProps, ...dataset)
       each checkbox in checkboxData
         .accessorises__checkbox-item(data-tooltip=checkbox.tooltip)
           +checkbox({ text: checkbox.name, checked: false, name: 'accessorises', value: 'accessorises', type: 'checkbox' })
-          button.accessorises__checkbox-tooltip(
+          .accessorises__checkbox-tooltip(
             data-tooltip-placement=checkbox.tooltipPlacement
           )
             img.lazy.accessorises__item-tooltip-icon(

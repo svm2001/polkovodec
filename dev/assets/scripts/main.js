@@ -37,6 +37,6 @@ export default function main() {
   colorDefault()
   colorCustom()
   video()
-
+  
   setTimeout(() => preloader.hide(), 500)
 }

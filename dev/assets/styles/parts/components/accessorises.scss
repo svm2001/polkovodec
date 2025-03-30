@@ -123,6 +123,10 @@
     }
   }
 
+  &__checkbox-tooltip {
+    cursor: pointer;
+  }
+
   &__tooltip {
     background-color: $white;
     display: flex;

@@ -57,6 +57,8 @@
     color: $white;
     margin-bottom: 20px;
     line-height: 70px;
+    display: flex;
+    flex-direction: column;
 
     &-text {
       &--mob {

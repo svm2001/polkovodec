@@ -4,7 +4,6 @@
       name: '',
       validateName: '',
       label: '',
-      inputmode: 'text',
       placeholder: '',
       required: false,
       disabled: false,
@@ -21,7 +20,6 @@ mixin input(props = defaultInputProps, ...dataset)
         name: props.name ? props.name : defaultInputProps.name,
         validateName: props.validateName ? props.validateName : defaultInputProps.validateName,
         label: props.label ? props.label : defaultInputProps.label,
-        inputmode: props.inputmode ? props.inputmode : defaultInputProps.inputmode,
         placeholder: props.placeholder ? props.placeholder : defaultInputProps.placeholder,
         required: props.required ? props.required : defaultInputProps.required,
         disabled: props.disabled ? props.disabled : defaultInputProps.disabled,
@@ -47,7 +45,6 @@ mixin input(props = defaultInputProps, ...dataset)
       name=checkProps.name,
       data-input-name=checkProps.validateName,
       data-input-mask=mask,
-      inputmode=checkProps.inputmode,
       required=checkProps.required,
       placeholder=checkProps.placeholder,
       autocomplete=checkProps.autocomplete

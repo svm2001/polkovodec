@@ -28,7 +28,6 @@ mixin btn(props = defaultBtnProps, ...dataset)
   if (checkProps.type === 'button')
     button.btn(
       type=checkProps.type,
-      target,
       class=`${checkProps.classes} ${checkProps.disabled ? 'disabled' : ''}`
     )&attributes(...dataset)
       span.btn__text= checkProps.name
@@ -40,7 +39,6 @@ mixin btn(props = defaultBtnProps, ...dataset)
   else if (checkProps.type === 'submit')
     button.btn(
       type=checkProps.type,
-      target,
       class=`${checkProps.classes} ${checkProps.disabled ? 'disabled' : ''}`
     )&attributes(...dataset)
       span.btn__text= checkProps.name

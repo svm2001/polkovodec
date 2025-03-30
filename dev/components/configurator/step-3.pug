@@ -40,8 +40,8 @@
           p.configurator__form-subtitle Мы будем рады обсудить ваш проект и помочь вам реализовать все ваши идеи
           .footer__form-inputs
             +input({ validateName: 'name', placeholder: 'Имя', name: 'name', required: true, classes: 'input--theme--light input--size--l' })
-            +input({ placeholder: 'Телефон', name: 'phone', validateName: 'phone', inputmode: 'tel', required: true, classes: 'input--theme--light input--size--l' }, { 'data-input-mask': 'phone'})
-            +input({ type: 'email', validateName: 'email', name: 'email', inputmode: 'email', placeholder: 'Email*', required: true, classes: 'input--theme--light input--size--l' })
+            +input({ placeholder: 'Телефон', name: 'phone', validateName: 'phone', required: true, classes: 'input--theme--light input--size--l' }, { 'data-input-mask': 'phone'})
+            +input({ type: 'email', validateName: 'email', name: 'email', placeholder: 'Email*', required: true, classes: 'input--theme--light input--size--l' })
         .form__success
           .form__success-check
           .form__success-title Заявка успешно отправлена!

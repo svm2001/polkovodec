@@ -60,7 +60,7 @@ mixin header(props = defaultHeaderProps, ...dataset)
   .burger
     .burger__top
       include ../assets/icon-system/icon-logo-dark
-      button.burger__close(aria-label="Закрыть", aria-labelledby="button")
+      button.burger__close(aria-label="Закрыть")
         include ../assets/icon-system/icon-close
     .burger__form
       form(action, data-validate, novalidate)
@@ -70,8 +70,8 @@ mixin header(props = defaultHeaderProps, ...dataset)
           include ../ui/input
           .header__form-inputs
             +input({ validateName: 'name', placeholder: 'Имя', name: 'name', required: true, classes: 'input--theme--t input--size--l' })
-            +input({ placeholder: 'Телефон', name: 'phone', validateName: 'phone', inputmode: 'tel', required: true, classes: 'input--size--l' }, { 'data-input-mask': 'phone'})
-            +input({ type: 'email', validateName: 'email', name: 'email', inputmode: 'email', placeholder: 'Email*', required: true, classes: 'input--size--l' })
+            +input({ placeholder: 'Телефон', name: 'phone', validateName: 'phone', required: true, classes: 'input--size--l' }, { 'data-input-mask': 'phone'})
+            +input({ type: 'email', validateName: 'email', name: 'email', placeholder: 'Email*', required: true, classes: 'input--size--l' })
             +btn({ type: 'submit', name: 'Отправить', classes: 'header__form-send-btn' })
 
           p.header__form-agreement Нажимая на кнопку, вы соглашаетесь с
@@ -114,8 +114,8 @@ mixin header(props = defaultHeaderProps, ...dataset)
         include ../ui/input
         .header__form-inputs
           +input({ validateName: 'name', placeholder: 'Имя', name: 'name', required: true, classes: 'input--theme--t input--size--l' })
-          +input({ placeholder: 'Телефон', name: 'phone', validateName: 'phone', inputmode: 'tel', required: true, classes: 'input--size--l' }, { 'data-input-mask': 'phone'})
-          +input({ type: 'email', validateName: 'email', name: 'email', inputmode: 'email', placeholder: 'Email*', required: true, classes: 'input--size--l' })
+          +input({ placeholder: 'Телефон', name: 'phone', validateName: 'phone', required: true, classes: 'input--size--l' }, { 'data-input-mask': 'phone'})
+          +input({ type: 'email', validateName: 'email', name: 'email', placeholder: 'Email*', required: true, classes: 'input--size--l' })
           +btn({ type: 'submit', name: 'Отправить', classes: 'header__form-send-btn' })
 
         p.header__form-agreement Нажимая на кнопку, вы соглашаетесь с

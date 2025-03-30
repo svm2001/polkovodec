@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 import pugPlugin from 'vite-plugin-pug'
 import autoprefixer from 'autoprefixer'
+import { minify } from 'html-minifier-terser'
 
 export default defineConfig({
   root: './dev',
@@ -23,6 +24,12 @@ export default defineConfig({
         entryFileNames: `assets/[name].js`,
         chunkFileNames: `assets/[name].js`,
         assetFileNames: `assets/[name].[ext]`,
+      },
+    },
+    minify: 'terser',
+    terserOptions: {
+      format: {
+        comments: false,
       },
     },
   },
@@ -59,5 +66,13 @@ export default defineConfig({
         quality: 80,
       },
     }),
+    {
+      name: 'html-minifier',
+      transformIndexHtml: async (html) => {
+        return await minify(html, {
+          removeClosingSlash: true,
+        })
+      },
+    },
   ],
 })

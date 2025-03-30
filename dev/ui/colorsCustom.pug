@@ -13,7 +13,7 @@ mixin colorsCustom(props = defaultColorsCustomProps, ...dataset)
 
   .colorsCustom(class=`${checkProps.classes}`, data-custom-color)&attributes(...dataset)
     .colorsCustom__title= props.title
-    button.colorsCustom__color(title="Укажите цвет в формате RAL")
+    div.colorsCustom__color(title="Укажите цвет в формате RAL")
       .colorsCustom__color-inner
         .colorsCustom__color-inner-wrapper
       span.colorsCustom__color-selected-value ral 0000
