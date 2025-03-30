@@ -97,26 +97,26 @@
   }
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-input[type=number] {
-    -moz-appearance: textfield;
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 
 input {
-  font-family: $primary-font!important;
+  font-family: $primary-font !important;
 }
 
 .input--error .input__field {
-  border-bottom: 1px solid red!important;
+  border-bottom: 1px solid red !important;
 }
 
 @media (max-width: 1280px) {
   input {
-    font-size: 14px!important;
+    font-size: 14px !important;
   }
 }

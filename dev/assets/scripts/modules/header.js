@@ -3,7 +3,6 @@ import { disablePageScroll, enablePageScroll } from 'scroll-lock'
 export default function header() {
   const header = document.querySelector('header')
   const headerLinks = document.querySelectorAll('.header__link')
-
   const burgerLinks = document.querySelectorAll('.burger__link')
   const burgerForm = document.querySelector('.burger__form')
   const burgerLinksWrapper = document.querySelector('.burger__nav')
@@ -14,31 +13,55 @@ export default function header() {
 
   if (!header) return
 
-  const checkScroll = () => window.scrollY > 5 
-    ? header.classList.add('scrollable') 
-    : header.classList.remove('scrollable')
+  const checkScroll = () =>
+    window.scrollY > 5
+      ? header.classList.add('scrollable')
+      : header.classList.remove('scrollable')
 
+  const setActiveLink = clickedLink => {
+    headerLinks.forEach(link => link.classList.remove('active'))
+    burgerLinks.forEach(link => link.classList.remove('active'))
 
-  const handleHeaderLinkClick = (e) => {
+    clickedLink.classList.add('active')
+
+    const href = clickedLink.getAttribute('href')
+    if (href) {
+      const correspondingLink = clickedLink.classList.contains('header__link')
+        ? document.querySelector(`.burger__link[href="${href}"]`)
+        : document.querySelector(`.header__link[href="${href}"]`)
+      if (correspondingLink) {
+        correspondingLink.classList.add('active')
+      }
+    }
+  }
+
+  const handleHeaderLinkClick = e => {
     e.preventDefault()
+    const clickedLink = e.target.closest('.header__link')
+    setActiveLink(clickedLink)
     if (burger.classList.contains('active')) {
       burger.classList.remove('active')
       enablePageScroll(header)
     }
   }
 
-  document.addEventListener('click', (e) => {
-    if (e.target.closest('.header__link')) {
-      handleHeaderLinkClick(e)
-    }
-  }, { passive: false })
+  document.addEventListener(
+    'click',
+    e => {
+      if (e.target.closest('.header__link')) {
+        handleHeaderLinkClick(e)
+      }
+    },
+    { passive: false },
+  )
 
   burgerLinks.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault()
+      const clickedLink = e.target.closest('.burger__link')
+      setActiveLink(clickedLink)
       if (burger.classList.contains('active')) burger.classList.remove('active')
       enablePageScroll(header)
-
     })
   })
 

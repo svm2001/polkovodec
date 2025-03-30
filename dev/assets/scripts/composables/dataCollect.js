@@ -1,4 +1,4 @@
-import tippy from 'tippy.js';
+import tippy from 'tippy.js'
 import { Swiper } from '../../../../node_modules/swiper/swiper-bundle.min.mjs'
 import 'swiper/css'
 import 'tippy.js/dist/tippy.css'
@@ -8,15 +8,21 @@ export const dataCollect = () => {
 
   if (!data) return
 
-  const heightValue = document.querySelector('.configurator__slide-item-title-value')
+  const heightValue = document.querySelector(
+    '.configurator__slide-item-title-value',
+  )
   const depthValue = document.querySelector('.js-set-depth')
   const frontDoorValue = document.querySelector('.js-variant-front')
   const backDoorValue = document.querySelector('.js-variant-back')
   const executionValue = document.querySelector('.js-set-execution')
   const colorValue = document.querySelector('.js-set-color')
 
-  const selectedAccessories = document.querySelectorAll('.accessorises__item.selected')
-  const selectedCheckboxes = document.querySelectorAll('.accessorises__checkbox-item input[type="checkbox"]:checked')
+  const selectedAccessories = document.querySelectorAll(
+    '.accessorises__item.selected',
+  )
+  const selectedCheckboxes = document.querySelectorAll(
+    '.accessorises__checkbox-item input[type="checkbox"]:checked',
+  )
 
   const heightDataValue = data.querySelector('.js-data-height-value')
   const depthDataValue = data.querySelector('.js-data-depth-value')
@@ -29,10 +35,12 @@ export const dataCollect = () => {
   const depthBlock = data.querySelector('.js-data-depth')
   const doorBlock = data.querySelector('.js-variants')
   const executionBlock = data.querySelector('.js-data-execution')
-  const colorBlock = data.querySelector('.js-data-color')  
+  const colorBlock = data.querySelector('.js-data-color')
   const accessorisesBlock = data.querySelector('.js-data-accessorises') // общая обертка аксессуаров
   const accessorisesSlider = data.querySelector('.js-data-accessorises-slider') // слайдер аксессуаров
-  const accessorisesCheckboxes = data.querySelector('.js-data-accessorises-checkboxes') // чекбоксы аксессуаров
+  const accessorisesCheckboxes = data.querySelector(
+    '.js-data-accessorises-checkboxes',
+  ) // чекбоксы аксессуаров
 
   if (heightValue) {
     heightBlock.classList.add('visible')
@@ -44,28 +52,31 @@ export const dataCollect = () => {
     depthDataValue.textContent = depthValue.getAttribute('data-depth')
   }
 
-  if(frontDoorValue) {
+  if (frontDoorValue) {
     doorBlock.classList.add('visible')
-    frontDoorDataValue.textContent = frontDoorValue.getAttribute('data-front-door')
+    frontDoorDataValue.textContent =
+      frontDoorValue.getAttribute('data-front-door')
   }
 
-  if(backDoorValue) {
+  if (backDoorValue) {
     doorBlock.classList.add('visible')
     backDoorDataValue.textContent = backDoorValue.getAttribute('data-back-door')
   }
 
-  if(executionValue) {
+  if (executionValue) {
     executionBlock.classList.add('visible')
-    executionDataValue.textContent = executionValue.querySelector('.switch-wrapper').getAttribute('data-switch-selected')
+    executionDataValue.textContent = executionValue
+      .querySelector('.switch-wrapper')
+      .getAttribute('data-switch-selected')
   }
 
-  if(colorValue) {
+  if (colorValue) {
     colorBlock.classList.add('visible')
     colorDataValue.textContent = colorValue.getAttribute('data-color-end')
   }
 
   const backBtn = document.querySelector('.js-step-3-2')
-  if(backBtn) {
+  if (backBtn) {
     backBtn.addEventListener('click', () => {
       accessorisesSlider.innerHTML = ''
       accessorisesCheckboxes.innerHTML = ''
@@ -80,12 +91,14 @@ export const dataCollect = () => {
     if (selectedAccessories.length > 2) {
       const controlsWrapper = document.createElement('div')
       controlsWrapper.className = 'accessorises__slider-controls'
-      
+
       const prevBtn = document.createElement('button')
       const nextBtn = document.createElement('button')
-      prevBtn.className = 'accessorises__slider-btn accessorises__slider-btn--prev'
-      nextBtn.className = 'accessorises__slider-btn accessorises__slider-btn--next'
-      
+      prevBtn.className =
+        'accessorises__slider-btn accessorises__slider-btn--prev'
+      nextBtn.className =
+        'accessorises__slider-btn accessorises__slider-btn--next'
+
       controlsWrapper.appendChild(prevBtn)
       controlsWrapper.appendChild(nextBtn)
       accessorisesSlider.appendChild(controlsWrapper)
@@ -97,7 +110,7 @@ export const dataCollect = () => {
     selectedAccessories.forEach(accessory => {
       const swiperSlide = document.createElement('div')
       swiperSlide.className = 'swiper-slide'
-      
+
       const accessoryClone = accessory.cloneNode(true)
       swiperSlide.appendChild(accessoryClone)
       swiperWrapper.appendChild(swiperSlide)
@@ -121,25 +134,27 @@ export const dataCollect = () => {
       })
     }
 
-    const accessorisesSliderItems = accessorisesSlider.querySelectorAll('.accessorises__item')
-    if(accessorisesSliderItems.length > 0) {
+    const accessorisesSliderItems = accessorisesSlider.querySelectorAll(
+      '.accessorises__item',
+    )
+    if (accessorisesSliderItems.length > 0) {
       accessorisesSliderItems.forEach(accessorise => {
-            const content = accessorise.getAttribute('data-tooltip')
-            const trigger = accessorise.querySelector('.accessorises__item-tooltip')
-            const placement = trigger.getAttribute('data-tooltip-placement')
+        const content = accessorise.getAttribute('data-tooltip')
+        const trigger = accessorise.querySelector('.accessorises__item-tooltip')
+        const placement = trigger.getAttribute('data-tooltip-placement')
 
-            if (trigger && content) {
-                tippy(trigger, {
-                    content,
-                    placement,
-                    allowHTML: true,
-                    interactive: window.innerWidth > 1280 ? true : false,
-                    animation: 'fade',
-                    duration: [200, 200],
-                    appendTo: () => document.body
-                })
-            }
-        })
+        if (trigger && content) {
+          tippy(trigger, {
+            content,
+            placement,
+            allowHTML: true,
+            interactive: window.innerWidth > 1280 ? true : false,
+            animation: 'fade',
+            duration: [200, 200],
+            appendTo: () => document.body,
+          })
+        }
+      })
     }
   } else {
     accessorisesSlider.style.display = 'none'
@@ -161,25 +176,29 @@ export const dataCollect = () => {
     accessorisesCheckboxes.innerHTML = ''
     accessorisesCheckboxes.appendChild(checkboxesList)
 
-    const accessorisesCheckboxItems = accessorisesCheckboxes.querySelectorAll('.accessorises__checkbox-item')
-    if(accessorisesCheckboxItems.length > 0) {
-        accessorisesCheckboxItems.forEach(accessorise => {
-            const content = accessorise.getAttribute('data-tooltip')
-            const trigger = accessorise.querySelector('.accessorises__checkbox-tooltip')
-            const placement = trigger.getAttribute('data-tooltip-placement')
+    const accessorisesCheckboxItems = accessorisesCheckboxes.querySelectorAll(
+      '.accessorises__checkbox-item',
+    )
+    if (accessorisesCheckboxItems.length > 0) {
+      accessorisesCheckboxItems.forEach(accessorise => {
+        const content = accessorise.getAttribute('data-tooltip')
+        const trigger = accessorise.querySelector(
+          '.accessorises__checkbox-tooltip',
+        )
+        const placement = trigger.getAttribute('data-tooltip-placement')
 
-            if (trigger && content) {
-                tippy(trigger, {
-                    content,
-                    placement,
-                    allowHTML: true,
-                    interactive: window.innerWidth > 1280 ? true : false,
-                    animation: 'fade',
-                    duration: [200, 200],
-                    appendTo: () => document.body
-                })
-            }
-        })
+        if (trigger && content) {
+          tippy(trigger, {
+            content,
+            placement,
+            allowHTML: true,
+            interactive: window.innerWidth > 1280 ? true : false,
+            animation: 'fade',
+            duration: [200, 200],
+            appendTo: () => document.body,
+          })
+        }
+      })
     }
   } else {
     accessorisesCheckboxes.classList.add('hidden')

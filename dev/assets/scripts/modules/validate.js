@@ -121,47 +121,90 @@ export default function validate() {
           const errorMsg = form.querySelector('.form__error')
 
           if (errors === 0) {
-            const isConfiguratorForm = form.hasAttribute('data-configurator-form')
+            const isConfiguratorForm = form.hasAttribute(
+              'data-configurator-form',
+            )
 
-            if(isConfiguratorForm) {
+            if (isConfiguratorForm) {
               const dataFromConfig = document.querySelector('.js-data')
               const formData = new FormData()
-              
+
               // основные данные
-              formData.append('height', dataFromConfig.querySelector('.js-data-height-value').textContent)
-              formData.append('depth', dataFromConfig.querySelector('.js-data-depth-value').textContent)
-              formData.append('frontDoor', dataFromConfig.querySelector('.js-front-door-value').textContent)
-              formData.append('backDoor', dataFromConfig.querySelector('.js-back-door-value').textContent)
-              formData.append('execution', dataFromConfig.querySelector('.js-data-execution-value').textContent)
-              formData.append('color', dataFromConfig.querySelector('.js-data-color-value').textContent)
-              
+              formData.append(
+                'height',
+                dataFromConfig.querySelector('.js-data-height-value')
+                  .textContent,
+              )
+              formData.append(
+                'depth',
+                dataFromConfig.querySelector('.js-data-depth-value')
+                  .textContent,
+              )
+              formData.append(
+                'frontDoor',
+                dataFromConfig.querySelector('.js-front-door-value')
+                  .textContent,
+              )
+              formData.append(
+                'backDoor',
+                dataFromConfig.querySelector('.js-back-door-value').textContent,
+              )
+              formData.append(
+                'execution',
+                dataFromConfig.querySelector('.js-data-execution-value')
+                  .textContent,
+              )
+              formData.append(
+                'color',
+                dataFromConfig.querySelector('.js-data-color-value')
+                  .textContent,
+              )
+
               // Добавляем аксессуары
-              const sliderAccessories = Array.from(dataFromConfig.querySelectorAll('.js-data-accessorises-slider .swiper-slide .accessorises__item-name')).map(slide => slide.textContent.trim())
-              const checkboxAccessories = Array.from(dataFromConfig.querySelectorAll('.js-data-accessorises-checkboxes .checkbox__text')).map(text => text.textContent.trim())
-              
-              formData.append('accessories[slider]', JSON.stringify(sliderAccessories).replace(/\\/g, ''))
-              formData.append('accessories[checkboxes]', JSON.stringify(checkboxAccessories).replace(/\\/g, ''))
+              const sliderAccessories = Array.from(
+                dataFromConfig.querySelectorAll(
+                  '.js-data-accessorises-slider .swiper-slide .accessorises__item-name',
+                ),
+              ).map(slide => slide.textContent.trim())
+              const checkboxAccessories = Array.from(
+                dataFromConfig.querySelectorAll(
+                  '.js-data-accessorises-checkboxes .checkbox__text',
+                ),
+              ).map(text => text.textContent.trim())
+
+              formData.append(
+                'accessories[slider]',
+                JSON.stringify(sliderAccessories).replace(/\\/g, ''),
+              )
+              formData.append(
+                'accessories[checkboxes]',
+                JSON.stringify(checkboxAccessories).replace(/\\/g, ''),
+              )
 
               // Добавляем контактные данные (имя, телефон, email)
               const formInputs = form.querySelectorAll('input')
-              formInputs.forEach(input => formData.append(input.name, input.value))
+              formInputs.forEach(input =>
+                formData.append(input.name, input.value),
+              )
 
               console.table(Object.fromEntries(formData))
 
-              const configuratorForm = document.querySelector('.configurator__slider')
+              const configuratorForm = document.querySelector(
+                '.configurator__slider',
+              )
               const configurator = document.querySelector('.configurator')
               const stepCounter = document.querySelector('.configurator__step')
 
               const successMsg = configurator.querySelector('.js-form-success')
               const errorMsg = configurator.querySelector('.js-form-error')
-              
+
               const hideForm = () => {
                 configuratorForm.remove()
                 stepCounter.remove()
                 configurator.scrollIntoView({
                   behavior: 'instant',
-                  block: 'center'
-                });
+                  block: 'center',
+                })
               }
 
               $.ajax({
@@ -177,13 +220,18 @@ export default function validate() {
                 error: function (error) {
                   hideForm()
                   errorMsg.style.display = 'block'
-                  console.error('Ошибка при отправке формы: ',error.responseText);
+                  console.error(
+                    'Ошибка при отправке формы: ',
+                    error.responseText,
+                  )
                 },
               })
             } else {
               const formData = new FormData()
               const formInputs = form.querySelectorAll('input')
-              formInputs.forEach(input => formData.append(input.name, input.value))
+              formInputs.forEach(input =>
+                formData.append(input.name, input.value),
+              )
 
               console.table(Object.fromEntries(formData))
 
@@ -200,7 +248,10 @@ export default function validate() {
                 error: function (error) {
                   formBody.classList.add('hidden')
                   errorMsg.style.display = 'flex'
-                  console.error('Ошибка при отправке формы: ',error.responseText);
+                  console.error(
+                    'Ошибка при отправке формы: ',
+                    error.responseText,
+                  )
                 },
               })
             }

@@ -1,9 +1,130 @@
 .video {
   padding-top: 142px;
+
+  &__title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 37px;
+    max-width: 1091px;
+  }
+
+  &__container {
+    position: relative;
+    width: 100%;
+    max-height: 720px;
+    min-height: 720px;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__poster {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: $transition ease-in-out;
+
+    &.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &__close-btn {
+    z-index: 2;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 50%;
+    background-color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    transition: $transition ease-in-out;
+
+    img {
+      width: 70%;
+      height: 70%;
+    }
+
+    &:hover {
+      background-color: $black-800;
+    }
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__play-btn {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform $transition ease-in-out;
+    width: 80px;
+    height: 80px;
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  video {
+    opacity: 0.99;
+    width: 100%;
+    max-height: 720px;
+    min-height: 720px;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 @media (max-width: 1280px) {
   .video {
     padding: 0;
+    padding-top: 100px;
+
+    &__title {
+      font-size: 24px;
+      margin-bottom: 23px;
+    }
+
+    &__play-btn {
+      width: 60px;
+      height: 60px;
+    }
+
+    &__close-btn {
+      top: 8px;
+      right: 8px;
+      width: 32px;
+      height: 32px;
+    }
+
+    &__container,
+    video {
+      min-height: calc(270px + (720 - 270) * ((100vw - 360px) / (1280 - 360)));
+      max-height: calc(270px + (720 - 270) * ((100vw - 360px) / (1280 - 360)));
+    }
   }
 }

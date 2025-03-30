@@ -1,29 +1,32 @@
 -
-    const defaultRangeProps = {
-        values: [12, 18, 21, 24, 36, 42, 48, 60, 72],
-        selected: 12,
-        prefix: '',        
-        classes: ''
-    }
+  const defaultRangeProps = {
+      values: [12, 18, 21, 24, 36, 42, 48, 60, 72],
+      selected: 12,
+      prefix: '',        
+      classes: ''
+  }
 
 mixin range(props = defaultRangeProps, ...dataset)
-    -
-        const checkProps = {
-            values: props.values ? props.values : defaultRangeProps.values,
-            selected: props.selected ? props.selected : defaultRangeProps.selected,
-            classes: props.classes ? props.classes : defaultRangeProps.classes,
-            prefix: props.prefix ? props.prefix : defaultRangeProps.prefix
-        }
+  -
+    const checkProps = {
+        values: props.values ? props.values : defaultRangeProps.values,
+        selected: props.selected ? props.selected : defaultRangeProps.selected,
+        classes: props.classes ? props.classes : defaultRangeProps.classes,
+        prefix: props.prefix ? props.prefix : defaultRangeProps.prefix
+    }
 
-    .range(class=`${checkProps.classes}`, 
-        data-range-values=checkProps.values 
-        data-range-selected=checkProps.selected
-        data-range-prefix=checkProps.prefix
-    )&attributes(...dataset)
-        .range__line 
-        .range__points-list
-            each value in checkProps.values
-                button.range__points-item(data-range-value=value data-range-prefix=checkProps.prefix)
-                    span.range__points-item-dot
-                    span.range__points-item-text= value+checkProps.prefix
-        
+  .range(
+    class=`${checkProps.classes}`,
+    data-range-values=checkProps.values,
+    data-range-selected=checkProps.selected,
+    data-range-prefix=checkProps.prefix
+  )&attributes(...dataset)
+    .range__line
+    .range__points-list
+      each value in checkProps.values
+        button.range__points-item(
+          data-range-value=value,
+          data-range-prefix=checkProps.prefix
+        )
+          span.range__points-item-dot
+          span.range__points-item-text= value + checkProps.prefix

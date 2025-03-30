@@ -1,0 +1,13 @@
+-
+  const defaultPreLoaderrProps = {
+      classes: '',
+  }
+
+mixin preloader(props = defaultPreLoaderrProps, ...dataset)
+  -
+    const checkProps = {
+        classes: props.classes ? props.classes : defaultPreLoaderrProps.classes,
+    }
+
+  .preloader
+    .loader

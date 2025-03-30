@@ -1,11 +1,38 @@
 -
   const defaultVideoProps = {
       classes: '',
+      video: './video/mock-video.mp4',
+      videoType: 'video/mp4',
+      title: 'Премиум-материалы и продуманная конструкция делают шкафы ДОБРЫНЯ® оптимальным выбором для применения как в гражданской, так и в военной сферах'
   }
 
 mixin video(props = defaultVideoProps, ...dataset)
   -
     const checkProps = {
         classes: props.classes ? props.classes : defaultConstructiveProps.classes,
+        video: props.video ? props.video : defaultConstructiveProps.video,
+        videoType: props.videoType ? props.videoType : defaultConstructiveProps.videoType,
+        title: props.title ? props.title : defaultConstructiveProps.title,
     }
-  section.video video
+  section.video.js-video
+    .container
+      h2.video__title= checkProps.title
+    .container.container-hide
+      .video__container
+        img.lazy.video__poster(
+          src="./images/no-image.jpg",
+          data-src="./images/slider/1.webp",
+          alt="video-poster"
+        )
+        button.video__play-btn(title="Посмотреть видео")
+          img.lazy.video__play-btn-icon(
+            src="./images/play.svg",
+            alt="play-button"
+          )
+        button.video__close-btn(title="Закрыть видео")
+          img.lazy.video__close-btn-icon(
+            src="./images/close-white.svg",
+            alt="play-button"
+          ) 
+        video(controls, playsinline)
+          source(src=checkProps.video, type=checkProps.videoType)

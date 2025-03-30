@@ -82,7 +82,7 @@
     max-width: 153px;
     min-height: 40px;
     span {
-      font-size: 13px;
+      font-size: 13px !important;
     }
   }
 
@@ -166,6 +166,16 @@
   .header__link,
   .header__contact-link {
     color: $black;
+
+    &:hover {
+      color: $primary-green;
+      opacity: 1;
+    }
+
+    &.active {
+      color: $primary-green;
+      cursor: default;
+    }
   }
 
   .header__btn {
@@ -278,6 +288,9 @@
   &__link {
     font-size: 24px;
     color: $black;
+    &.active {
+      color: $primary-green;
+    }
   }
 
   &__info {

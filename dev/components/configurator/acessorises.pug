@@ -1,215 +1,214 @@
 include ../../ui/checkbox
 -
-    const defaultAccessorisesProps = {
-        classes: '',
-    }
+  const defaultAccessorisesProps = {
+      classes: '',
+  }
 
-    const accessorisesData = [
-        {
-            name: 'Выдвижной ящик',
-            image: 'https://i.ibb.co/ZzhJfwRW/1.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Выдвижные рельсы',
-            image: 'https://i.ibb.co/rf2339qT/2.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Гигрометр ',
-            image: 'https://i.ibb.co/0T1jqTT/3.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Кабельные организаторы горизонтальный / вертикальный  ',
-            image: 'https://i.ibb.co/pvH5pQWf/4.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Комплект для герметизации',
-            image: 'https://i.ibb.co/6JVdhDyV/5.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Набор крепежа №1',
-            image: 'https://i.ibb.co/jkjCkYnT/6.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Металлическая рамка для карточки с адресом или описью содержимого',
-            image: 'https://i.ibb.co/4Z84zjnZ/7.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Ролики съемные на вертлюге с тормозами, комплект 4 шт',
-            image: 'https://i.ibb.co/hRVLVnxV/8.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Сварные кольца',
-            image: 'https://i.ibb.co/bgCHshTc/9.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Упор горизонтальный',
-            image: 'https://i.ibb.co/Dfy05fjM/10.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Упор нижний',
-            image: 'https://i.ibb.co/hRKh82w7/11.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false, 
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Фальшпанель',
-            image: 'https://i.ibb.co/F4N3Ndz6/12.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Выдвижная полка',
-            image: 'https://i.ibb.co/RTnKP40X/13.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Фиксированная полка',
-            image: 'https://i.ibb.co/8gBLtWJc/14.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Комплект виброизоляции',
-            image: 'https://i.ibb.co/xwnVgTY/15.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Съёмная ручка для перемещения',
-            image: 'https://i.ibb.co/TVzpQ88/16.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Шина заземления вертикальная/горизонтальная',
-            image: 'https://i.ibb.co/n8DnLpGF/17.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: false,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Вентиляционная панель нижняя с термоконтроллером',
-            image: 'https://i.ibb.co/0RRrgH5y/18.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: true,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Вентиляционная панель верхняя с термоконтроллером',
-            image: 'https://i.ibb.co/8DMpv4GP/19.png',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            imgFull: true,
-            tooltipPlacement: 'bottom'
-        },
-    ]
+  const accessorisesData = [
+      {
+          name: 'Выдвижной ящик',
+          image: 'https://i.ibb.co/ZzhJfwRW/1.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Выдвижные рельсы',
+          image: 'https://i.ibb.co/rf2339qT/2.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Гигрометр ',
+          image: 'https://i.ibb.co/0T1jqTT/3.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Кабельные организаторы горизонтальный / вертикальный  ',
+          image: 'https://i.ibb.co/pvH5pQWf/4.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Комплект для герметизации',
+          image: 'https://i.ibb.co/6JVdhDyV/5.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Набор крепежа №1',
+          image: 'https://i.ibb.co/jkjCkYnT/6.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Металлическая рамка для карточки с адресом или описью содержимого',
+          image: 'https://i.ibb.co/4Z84zjnZ/7.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Ролики съемные на вертлюге с тормозами, комплект 4 шт',
+          image: 'https://i.ibb.co/hRVLVnxV/8.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Сварные кольца',
+          image: 'https://i.ibb.co/bgCHshTc/9.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Упор горизонтальный',
+          image: 'https://i.ibb.co/Dfy05fjM/10.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Упор нижний',
+          image: 'https://i.ibb.co/hRKh82w7/11.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false, 
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Фальшпанель',
+          image: 'https://i.ibb.co/F4N3Ndz6/12.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Выдвижная полка',
+          image: 'https://i.ibb.co/RTnKP40X/13.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Фиксированная полка',
+          image: 'https://i.ibb.co/8gBLtWJc/14.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Комплект виброизоляции',
+          image: 'https://i.ibb.co/xwnVgTY/15.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Съёмная ручка для перемещения',
+          image: 'https://i.ibb.co/TVzpQ88/16.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Шина заземления вертикальная/горизонтальная',
+          image: 'https://i.ibb.co/n8DnLpGF/17.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: false,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Вентиляционная панель нижняя с термоконтроллером',
+          image: 'https://i.ibb.co/0RRrgH5y/18.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: true,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Вентиляционная панель верхняя с термоконтроллером',
+          image: 'https://i.ibb.co/8DMpv4GP/19.png',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          imgFull: true,
+          tooltipPlacement: 'bottom'
+      },
+  ]
 
-    const checkboxData = [
-        {
-            name: 'Комплект герметизации (до IP55)',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Консоль для хранения съемных роликов',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Цоколь',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Регулируемые ножки',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            tooltipPlacement: 'bottom'
-        },
-        {
-            name: 'Аксессуары по ТЗ заказчика*',
-            tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
-            tooltipPlacement: 'bottom'
-        }
-    ]
+  const checkboxData = [
+      {
+          name: 'Комплект герметизации (до IP55)',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Консоль для хранения съемных роликов',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Цоколь',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Регулируемые ножки',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          tooltipPlacement: 'bottom'
+      },
+      {
+          name: 'Аксессуары по ТЗ заказчика*',
+          tooltip: `<div class="accessorises__tooltip"><div>(В составе: основание с комплектом амортизаторов, боковой и тыловой кронштейны для вертикального крепления)</div><div>Защищает установленное оборудование от вибрации.\</div></div>`,
+          tooltipPlacement: 'bottom'
+      }
+  ]
 
 mixin accessorises(props = defaultAccessorisesProps, ...dataset)
   -
-      const checkProps = {
-          classes: props.classes ? props.classes : defaultAccessorisesProps.classes,
-      }
+    const checkProps = {
+        classes: props.classes ? props.classes : defaultAccessorisesProps.classes,
+    }
 
   .accessorises
     .accessorises__title Аксессуары
     .accessorises__list
-        each accessorise in accessorisesData
-            button.accessorises__item(
-                class={ 'accessorises__item--img-full': accessorise.imgFull }
-                data-tooltip=accessorise.tooltip)
-                .accessorises__item-row 
-                    div.accessorises__item-tooltip(data-tooltip-placement=accessorise.tooltipPlacement)
-                        img.lazy.accessorises__item-tooltip-icon(
-                            src="./images/info.svg",
-                            alt= "tooltip trigger"
-                        )
-                    img.lazy.accessorises__item-selected-icon(
-                        src="./images/selected.svg",
-                        alt= "tooltip trigger"
-                    )
-                .lazy.accessorises__item-inner         
-                    img.lazy.accessorises__item-img(
-                        data-src=`${accessorise.image}`,
-                        src="./images/no-image.svg",
-                        alt= "img"
-                    )
-                .accessorises__item-name= accessorise.name
+      each accessorise in accessorisesData
+        button.accessorises__item(
+          class={ "accessorises__item--img-full": accessorise.imgFull },
+          data-tooltip=accessorise.tooltip
+        )
+          .accessorises__item-row
+            .accessorises__item-tooltip(
+              data-tooltip-placement=accessorise.tooltipPlacement
+            )
+              img.lazy.accessorises__item-tooltip-icon(
+                src="./images/info.svg",
+                alt="tooltip trigger"
+              )
+            img.lazy.accessorises__item-selected-icon(
+              src="./images/selected.svg",
+              alt="tooltip trigger"
+            )
+          .lazy.accessorises__item-inner
+            img.lazy.accessorises__item-img(
+              data-src=`${accessorise.image}`,
+              src="./images/no-image.svg",
+              alt="img"
+            )
+          .accessorises__item-name= accessorise.name
     .accessorises__checkboxes
-        each checkbox in checkboxData
-            .accessorises__checkbox-item(data-tooltip=checkbox.tooltip)
-                +checkbox({
-                    text: checkbox.name,
-                    checked: false,
-                    name: 'accessorises',
-                    value: 'accessorises',
-                    type: 'checkbox'
-                })
-                button.accessorises__checkbox-tooltip(data-tooltip-placement=checkbox.tooltipPlacement)
-                    img.lazy.accessorises__item-tooltip-icon(
-                        src="./images/info.svg",
-                        alt= "tooltip trigger"
-                    )
+      each checkbox in checkboxData
+        .accessorises__checkbox-item(data-tooltip=checkbox.tooltip)
+          +checkbox({ text: checkbox.name, checked: false, name: 'accessorises', value: 'accessorises', type: 'checkbox' })
+          button.accessorises__checkbox-tooltip(
+            data-tooltip-placement=checkbox.tooltipPlacement
+          )
+            img.lazy.accessorises__item-tooltip-icon(
+              src="./images/info.svg",
+              alt="tooltip trigger"
+            )

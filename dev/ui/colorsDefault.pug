@@ -1,35 +1,35 @@
 -
-    const defaultColorDefaultProps = {
-        classes: '',
-        title: '',
-        colors: [
-            { name: 'black', value: '#000000' },
-            { name: 'gray', value: '#808080' },
-            { name: 'dark-green', value: '#006400' },
-            
-        ]
-    }
+  const defaultColorDefaultProps = {
+      classes: '',
+      title: '',
+      colors: [
+          { name: 'black', value: '#000000' },
+          { name: 'gray', value: '#808080' },
+          { name: 'dark-green', value: '#006400' },
+        
+      ]
+  }
 
 mixin colorsDefault(props = defaultColorDefaultProps, ...dataset)
-    -
-        const checkProps = {
-            classes: props.classes ? props.classes : defaultColorDefaultProps.classes,
-            colors: props.colors ? props.colors : defaultColorDefaultProps.colors,
-            title: props.title ? props.title : defaultColorDefaultProps.title
-        }
+  -
+    const checkProps = {
+        classes: props.classes ? props.classes : defaultColorDefaultProps.classes,
+        colors: props.colors ? props.colors : defaultColorDefaultProps.colors,
+        title: props.title ? props.title : defaultColorDefaultProps.title
+    }
 
-    .colorDefault(
-        class=`${checkProps.classes}` 
-        data-default-color-selected="" 
-        data-color-default-name-selected=""
-    )&attributes(...dataset)
-        .colorDefault__title= props.title
-        .colorDefault__list
-            each color in checkProps.colors
-                .colorDefault__item(
-                    data-default-color=color.value
-                    data-color-default-name=color.name
-                )   
-                    .colorDefault__item-value
-                        .colorDefault__item-value-dot 
-                    .colorDefault__item-title= color.name
+  .colorDefault(
+    class=`${checkProps.classes}`,
+    data-default-color-selected,
+    data-color-default-name-selected
+  )&attributes(...dataset)
+    .colorDefault__title= props.title
+    .colorDefault__list
+      each color in checkProps.colors
+        .colorDefault__item(
+          data-default-color=color.value,
+          data-color-default-name=color.name
+        ) 
+          .colorDefault__item-value
+            .colorDefault__item-value-dot
+          .colorDefault__item-title= color.name

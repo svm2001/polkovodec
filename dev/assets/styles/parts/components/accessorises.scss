@@ -16,15 +16,15 @@
     position: relative;
 
     &::-webkit-scrollbar {
-      width:2px;     
+      width: 2px;
     }
-    
+
     &::-webkit-scrollbar-track {
       background: transparent;
     }
-    
+
     &::-webkit-scrollbar-thumb {
-      background-color: $primary-green;  
+      background-color: $primary-green;
       border-radius: 20px;
     }
   }
@@ -48,9 +48,8 @@
         border: 2px solid $white;
         opacity: 0;
         visibility: hidden;
-        transition: .1s ease-in-out;
+        transition: 0.1s ease-in-out;
       }
-
     }
 
     &--img-full {
@@ -78,7 +77,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-
     }
 
     &-tooltip {
@@ -109,15 +107,16 @@
     }
 
     .accessorises__item-selected-icon {
-      transition: .1s ease-in-out;
+      transition: 0.1s ease-in-out;
       opacity: 0;
       visibility: hidden;
       width: 20px;
       height: 20px;
     }
-    
+
     &.selected {
-      .accessorises__item-selected-icon, .accessorises__item-inner:before {
+      .accessorises__item-selected-icon,
+      .accessorises__item-inner:before {
         opacity: 1;
         visibility: visible;
       }
@@ -154,14 +153,15 @@
   }
 }
 
-.tippy-content, .tippy-box {
-  padding: 0px!important;
-  background: white!important;
-  border-radius: 10px!important;
+.tippy-content,
+.tippy-box {
+  padding: 0px !important;
+  background: white !important;
+  border-radius: 10px !important;
 }
 
 .tippy-arrow {
-  color: $white!important;
+  color: $white !important;
 }
 
 @media (max-width: 1280px) {
@@ -263,7 +263,6 @@
 
     &__item-inner {
       height: 160px;
-      
     }
 
     &__item-img {

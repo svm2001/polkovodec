@@ -7,7 +7,7 @@
 }
 
 :root {
-  font-family: $primary-font!important;
+  font-family: $primary-font !important;
   font-weight: 400;
   font-size: 16px;
   line-height: normal;
@@ -37,7 +37,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    transition: .4s ease;
+    transition: 0.4s ease;
     opacity: 0;
     visibility: hidden;
     z-index: 999;
@@ -52,7 +52,7 @@ body.lock {
 }
 
 button {
-  font-family: $primary-font!important;
+  font-family: $primary-font !important;
 }
 
 p {
@@ -77,13 +77,15 @@ p {
 .lazy-load {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+
   &.lazy-loaded {
     opacity: 1;
     transform: translateY(0);
   }
-} 
+}
 
 .container {
   position: relative;

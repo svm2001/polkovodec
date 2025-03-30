@@ -137,7 +137,8 @@
         height: 100%;
         object-fit: cover;
       }
-      &-full, &-center {
+      &-full,
+      &-center {
         display: none;
       }
     }

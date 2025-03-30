@@ -16,7 +16,7 @@ import colorDefault from './modules/color-default'
 import colorCustom from './modules/color-custom'
 import lazyBlocks from './modules/lazy-blocks'
 import video from './modules/video'
-// import preloader from 'preloader-js';
+import preloader from 'preloader-js'
 
 export default function main() {
   lazyBlocks()
@@ -38,7 +38,5 @@ export default function main() {
   colorCustom()
   video()
 
-  // setTimeout(() => {
-  //     preloader.hide()
-  // }, 500)
+  setTimeout(() => preloader.hide(), 500)
 }
