@@ -118,9 +118,6 @@ export default function validate() {
               const formData = new FormData()
 
               // основные данные
-
-              console.log(dataFromConfig.querySelector('.js-data-height-value'));
-
               const heightValue = dataFromConfig.querySelector('.js-data-height-value').textContent
               const depthValue = dataFromConfig.querySelector('.js-data-depth-value').textContent
               const frontDoorValue = dataFromConfig.querySelector('.js-front-door-value').textContent
@@ -128,15 +125,12 @@ export default function validate() {
               const executionValue = dataFromConfig.querySelector('.js-data-execution-value').textContent
               const colorValue = dataFromConfig.querySelector('.js-data-color-value').textContent
               
-              
-
               if(heightValue !== '') formData.append('height', heightValue)
               if(depthValue !== '') formData.append('depth', depthValue)
               if(frontDoorValue !== '') formData.append('frontDoor', frontDoorValue)
               if(backDoorValue !== '') formData.append('backDoor', backDoorValue)
               if(executionValue !== '') formData.append('execution', executionValue)
               if(colorValue !== '') formData.append('color', colorValue)
-
 
               // Добавляем аксессуары
               const sliderAccessories = Array.from(
