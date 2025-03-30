@@ -162,6 +162,7 @@ export default function configurator() {
       const placement = trigger.getAttribute('data-tooltip-placement')
 
       if (trigger && content) {
+        
         tippy(trigger, {
           content,
           placement,

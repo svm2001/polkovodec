@@ -36,18 +36,6 @@ export default function validate() {
             },
           }
         },
-        validateTextarea = textarea => {
-          const field = textarea.querySelector('textarea'),
-            valueField = field.value
-
-          if (field.hasAttribute('required')) {
-            if (valueField === '') {
-              error(textarea).set()
-            } else {
-              error(textarea).remove()
-            }
-          }
-        },
         validateInput = input => {
           const field = input.querySelector('input'),
             name = field.getAttribute('data-input-name'),
@@ -130,35 +118,25 @@ export default function validate() {
               const formData = new FormData()
 
               // основные данные
-              formData.append(
-                'height',
-                dataFromConfig.querySelector('.js-data-height-value')
-                  .textContent,
-              )
-              formData.append(
-                'depth',
-                dataFromConfig.querySelector('.js-data-depth-value')
-                  .textContent,
-              )
-              formData.append(
-                'frontDoor',
-                dataFromConfig.querySelector('.js-front-door-value')
-                  .textContent,
-              )
-              formData.append(
-                'backDoor',
-                dataFromConfig.querySelector('.js-back-door-value').textContent,
-              )
-              formData.append(
-                'execution',
-                dataFromConfig.querySelector('.js-data-execution-value')
-                  .textContent,
-              )
-              formData.append(
-                'color',
-                dataFromConfig.querySelector('.js-data-color-value')
-                  .textContent,
-              )
+
+              console.log(dataFromConfig.querySelector('.js-data-height-value'));
+
+              const heightValue = dataFromConfig.querySelector('.js-data-height-value').textContent
+              const depthValue = dataFromConfig.querySelector('.js-data-depth-value').textContent
+              const frontDoorValue = dataFromConfig.querySelector('.js-front-door-value').textContent
+              const backDoorValue = dataFromConfig.querySelector('.js-back-door-value').textContent
+              const executionValue = dataFromConfig.querySelector('.js-data-execution-value').textContent
+              const colorValue = dataFromConfig.querySelector('.js-data-color-value').textContent
+              
+              
+
+              if(heightValue !== '') formData.append('height', heightValue)
+              if(depthValue !== '') formData.append('depth', depthValue)
+              if(frontDoorValue !== '') formData.append('frontDoor', frontDoorValue)
+              if(backDoorValue !== '') formData.append('backDoor', backDoorValue)
+              if(executionValue !== '') formData.append('execution', executionValue)
+              if(colorValue !== '') formData.append('color', colorValue)
+
 
               // Добавляем аксессуары
               const sliderAccessories = Array.from(
@@ -172,14 +150,8 @@ export default function validate() {
                 ),
               ).map(text => text.textContent.trim())
 
-              formData.append(
-                'accessories[slider]',
-                JSON.stringify(sliderAccessories).replace(/\\/g, ''),
-              )
-              formData.append(
-                'accessories[checkboxes]',
-                JSON.stringify(checkboxAccessories).replace(/\\/g, ''),
-              )
+              if(sliderAccessories.length > 0) formData.append('accessories[slider]', JSON.stringify(sliderAccessories).replace(/\\/g, ''))
+              if(checkboxAccessories.length > 0) formData.append('accessories[checkboxes]', JSON.stringify(checkboxAccessories).replace(/\\/g, ''))   
 
               // Добавляем контактные данные (имя, телефон, email)
               const formInputs = form.querySelectorAll('input')
