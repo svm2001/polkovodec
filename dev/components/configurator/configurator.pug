@@ -39,4 +39,15 @@ mixin configurator(props = defaultConfiguratorProps, ...dataset)
               include ./step-1
               include ./step-2
               include ./step-3
+
+        .form__success.js-form-success
+          .form__success-check
+            include ../../assets/icon-system/icon-check
+          .form__success-title Заявка успешно отправлена!
+          .form__success-subtitle Мы будем рады обсудить ваш проект и помочь вам реализовать все ваши идеи
+        .form__error.js-form-error
+          .form__error-check
+            include ../../assets/icon-system/icon-close
+          .form__error-title Что-то пошло не так
+          .form__error-subtitle Поробуйте отправить форму позже      
       

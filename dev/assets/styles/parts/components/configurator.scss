@@ -99,6 +99,7 @@
     }
 
     &-buttons {
+      width: 100%;
       gap: 20px;
       display: flex;
       align-items: center;
@@ -190,9 +191,181 @@
     }
   }
 
+  &__summary {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    color: $white;
+    font-size: 15px;
+
+    &-item {
+      padding-bottom: 32px;
+      border-bottom: 1px solid $black-600;
+      align-items: flex-start;
+      justify-content: space-between;
+      display: none;
+
+      &-block {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      &-title {
+        max-width: 193px;
+      }
+
+      &.visible {
+        display: flex;
+      }
+
+      &-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: right;
+      }
+
+      &-inner-title {
+        font-size: 12px;
+        color: $black-500;
+      }
+    }
+
+    &-accessorises-slider {
+      min-width: 0!important;
+      width: 100%;
+
+      .accessorises__item {
+        width: 100%;
+
+        &-inner:before {
+          display: none;
+        }
+      }
+
+      .accessorises__slider-controls {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        margin-bottom: 12px;
+        position: relative;
+
+        &:before {
+          content: 'Аксессуары';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          color: $white;
+          font-size: 16px;
+        }
+      }
+
+      .accessorises__slider-btn {
+        width: 32px;
+        height: 32px;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12px;
+        position: relative;
+        transition: all 0.3s ease;
+        margin: 0;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        &--prev {
+          background-image: url('/images/arrow-slider-prev.svg');
+        }
+
+        &--next {
+          background-image: url('/images/arrow-slider-next.svg');
+        }
+
+        &.swiper-button-disabled {
+          opacity: 0.33;
+          pointer-events: none;
+        }
+      }
+
+
+    }
+
+    .js-data-accessorises {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      border: none;
+    }
+
+    &-accessorises-checkboxes .accessorises__checkboxes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+
   .validation-error {
     .configurator__slide-item-title, .variants__item-title {
       color: rgb(255, 33, 33);
+    }
+  }
+
+  .footer__form-agreement {
+    margin-top: 20px;
+  }
+
+  &__form-title {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  &__form-subtitle {
+    font-size: 16px;
+    margin-bottom: 32px;
+    color: $black-400;
+    max-width: 65%;
+  }
+
+  .input {
+    position: relative;
+
+    .input__message {
+      position: absolute;
+    }
+  }
+
+  .footer__form-inputs {
+    gap: 30px;
+  }
+
+  .form__success {
+    max-width: 400px;
+    &-check {
+      margin-left: auto;
+      margin-right:auto;
+    }
+  }
+
+  .form__error {
+    &-check {
+      background-color: $white;
+      margin-left: auto;
+      margin-right:auto;
+      svg {
+        width: 32px;
+        height: 32px;
+      }
     }
   }
 }
@@ -201,6 +374,61 @@
   .configurator {
     padding-top: 80px;
     padding-bottom: 80px;
+
+    .accessorises__checkbox-item {
+      justify-content: space-between;
+    }
+
+    &__summary {
+      gap: 60px;
+    }
+
+    &__form-title {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    &__form-subtitle {
+      font-size: 14px;
+      margin-bottom: 32px;
+      max-width: 100%;
+    }
+
+    .form__success {
+      margin: auto;
+    }
+
+    .form__success-check {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 20px;
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .form__success-title {
+      font-size: 28px;
+    }
+
+    .form__error {
+      margin: auto;
+    }
+
+    .form__error-check {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 20px;
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .form__error-title {
+      font-size: 28px;
+    }
 
     &__body {
       flex-direction: column;
@@ -255,6 +483,39 @@
       &-buttons-error {
         font-size: 14px;
       }
+    }
+
+    &__data-item {
+      padding-bottom: 24px;
+
+      &:nth-last-child(1) {
+        padding-bottom: 0;
+      }
+    }
+
+    .configurator__data-item-title {
+      max-width: 50%;
+    }
+
+    .configurator__data-item-inner-title {
+      font-size: 10px;
+    }
+
+    .configurator__data-item-title, .configurator__data-item span {
+      font-size: 14px;
+    }
+
+    .configurator__data {
+      gap: 24px;
+    }
+
+    .accessorises__slider-btn {
+      width: 28px;
+      height: 28px;
+    }
+
+    .accessorises__slider-controls::before {
+      font-size: 14px;
     }
   }
 }

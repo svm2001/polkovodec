@@ -1,0 +1,11 @@
+-
+  const defaultVideoProps = {
+      classes: '',
+  }
+
+mixin video(props = defaultVideoProps, ...dataset)
+  -
+    const checkProps = {
+        classes: props.classes ? props.classes : defaultConstructiveProps.classes,
+    }
+  section.video video

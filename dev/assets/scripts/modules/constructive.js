@@ -23,7 +23,7 @@ export default function constructive() {
 
       constructiveItems.forEach(item => item.classList.remove('active'))
       item.classList.add('active')
-    }, 100)
+    }, 5)
   }
 
   const handleMouseLeave = () => {
@@ -31,7 +31,7 @@ export default function constructive() {
     debounceTimeout = setTimeout(() => {
       updateImage(defaultImage)
       constructiveItems.forEach(item => item.classList.remove('active'))
-    }, 100)
+    }, 5)
   }
 
   const constructiveList = document.querySelector('.constructive__list')

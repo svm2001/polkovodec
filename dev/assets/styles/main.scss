@@ -1,86 +1,8 @@
 @import './fonts';
 @import './vars';
-@import './mixins';
-@import './settings';
-@import './classes';
 @import './parts/layouts';
 @import './parts/components';
 @import './parts/ui';
 @import './parts/modal-windows';
 @import './libs';
-@import './media';
-@import './lazy-load';
-
-*,
-::before,
-::after {
-  box-sizing: border-box;
-}
-
-:root {
-  font-family: $primary-font;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: normal;
-  color: $black;
-}
-
-@media (max-width: 1280px) {
-  :root {
-    font-size: 14px;
-  }
-}
-
-html,
-body {
-  position: relative;
-  width: 100%;
-  background-color: $white;
-  overflow-x: hidden;
-}
-
-body {
-  &::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: .4s ease;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 999;
-  }
-}
-
-body.lock {
-  &::before {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
-p {
-  margin: 0;
-}
-
-#app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
-}
-
-*:focus-visible {
-  outline-color: $black;
-  outline-style: dotted;
-  outline-width: 3px;
-  outline-offset: 5px;
-  -moz-outline-radius: 30px;
-  transition: 0s;
-}
-
-.section {
-  // min-height: 90dvh;
-}
+@import './common';

@@ -13,7 +13,8 @@ export default function colorDefault() {
 
         item.addEventListener('click', () => {
             colorMain.setAttribute('data-is-next-step', true)
-            
+            colorMain.setAttribute('data-color-end', colorName)
+
             colorItems.forEach(el => el.classList.remove('active'))
             item.classList.add('active')
             colorDefault.setAttribute('data-default-color-selected', color)
@@ -22,8 +23,8 @@ export default function colorDefault() {
             // кастомный цвет
             const custom = document.querySelector('.colorsCustom');
             const customColor = document.querySelector('.colorsCustom__color.painted');
-            const customColorBlock = customColor.querySelector('.colorsCustom__color-inner-wrapper');
-            const customColorSelectedValue = customColor.querySelector('.colorsCustom__color-selected-value');
+            const customColorBlock = document.querySelector('.colorsCustom__color-inner-wrapper');
+            const customColorSelectedValue = document.querySelector('.colorsCustom__color-selected-value');
 
 
             if (custom) custom.setAttribute('data-custom-color', '');

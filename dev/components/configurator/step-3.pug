@@ -1,5 +1,51 @@
 .swiper-slide(data-step-number="3" data-step-description="Проверьте выбранные данные и оформите заявку")
     .configurator__slide.configurator__slide--3 
-        .configurator__slide-buttons
-            +btn({name: 'Назад', classes: 'configurator__slide-btn js-step-3-2'})
-            +btn({name: 'Отправить', type: 'submit', classes: 'configurator__submit-form'})
+        .configurator__summary
+            .configurator__data.js-data
+                .configurator__data-item.js-data-height
+                    span.configurator__data-item-title Высота стойки
+                    span.js-data-height-value
+                .configurator__data-item.js-data-depth
+                    span.configurator__data-item-title Глубина стойки
+                    span.js-data-depth-value  
+                .configurator__data-item.js-variants
+                    span.configurator__data-item-title Варианты комплектации дверей  
+                    .configurator__data-item-inner
+                        .configurator__data-item-block.js-front-door
+                            span.configurator__data-item-inner-title Фронтальная дверь
+                            span.js-front-door-value
+                        .configurator__data-item-block.js-back-door
+                            span.configurator__data-item-inner-title Тыловая дверь
+                            span.js-back-door-value  
+                .configurator__data-item.js-data-execution
+                    span.configurator__data-item-title Исполнение
+                    span.js-data-execution-value 
+                .configurator__data-item.js-data-color
+                    span.configurator__data-item-title Цвет корпуса
+                    span.js-data-color-value  
+                .configurator__data-item.js-data-accessorises
+                    .configurator__data-accessorises-slider.js-data-accessorises-slider.swiper 
+                    .configurator__data-accessorises-checkboxes.js-data-accessorises-checkboxes               
+            form.configurator__form(action, data-validate, novalidate data-configurator-form)
+                .form__body
+                    .configurator__form-title Оставьте заявку
+                    p.configurator__form-subtitle Мы будем рады обсудить ваш проект и помочь вам реализовать все ваши идеи
+                    .footer__form-inputs
+                        +input({ validateName: 'name', placeholder: 'Имя', name: 'name', required: true, classes: 'input--theme--light input--size--l' })
+                        +input({ placeholder: 'Телефон', name: 'phone', validateName: 'phone', inputmode: 'tel', required: true, classes: 'input--theme--light input--size--l' }, { 'data-input-mask': 'phone'})
+                        +input({ type: 'email', validateName: 'email', name: 'email', inputmode: 'email', placeholder: 'Email*', required: true, classes: 'input--theme--light input--size--l' })
+                .form__success
+                    .form__success-check
+                    .form__success-title Заявка успешно отправлена!
+                    .form__success-subtitle Мы будем рады обсудить ваш проект и помочь вам реализовать все ваши идеи
+
+                .form__error
+                    .form__error-check
+                    .form__error-title Что-то пошло не так
+                    .form__error-subtitle Поробуйте отправить форму позже
+                .configurator__slide-buttons
+                    +btn({name: 'Назад', classes: 'configurator__slide-btn js-step-3-2'})
+                    +btn({name: 'Отправить', type: 'submit', classes: 'configurator__submit-form'})
+                p.footer__form-agreement Нажимая на кнопку, вы соглашаетесь с
+                        | &nbsp;
+                        a(href="javascript:void(0)") политикой конфиденциальности    

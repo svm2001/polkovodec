@@ -23,6 +23,7 @@ export default function colorCustom() {
         
         if (foundColor) {
             colorMain.setAttribute('data-is-next-step', true)
+            colorMain.setAttribute('data-color-end', `RAL ${foundColor.ral}`)
 
             btn.classList.add('painted');
             paintedBlock.style.backgroundColor = foundColor.hex;
@@ -47,6 +48,7 @@ export default function colorCustom() {
             }
         } else {
             colorMain.setAttribute('data-is-next-step', false)
+            colorMain.setAttribute('data-color-end', '')
 
             btn.classList.remove('painted');
             paintedBlock.style.backgroundColor = 'transparent';

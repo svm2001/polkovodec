@@ -1,7 +1,9 @@
+import tippy from 'tippy.js';
 import { Swiper } from '../../../../node_modules/swiper/swiper-bundle.min.mjs'
 import 'swiper/css'
+import 'tippy.js/dist/tippy.css'
 import { radioClickProcessing } from '../composables/radioClickProcessing'
-
+import { dataCollect } from '../composables/dataCollect'
 export default function configurator() {
     const configurator = document.querySelector('.configurator');
 
@@ -20,6 +22,7 @@ export default function configurator() {
         centeredSlides: true,
         speed: 500,
         allowTouchMove: false,
+        autoHeight: true,
         draggable: false,
         touchRatio: 0,
         spaceBetween: 100,
@@ -73,39 +76,114 @@ export default function configurator() {
         return false;
     };
 
+    const scrollToStart = () => {
+        configurator.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+
     if (step1To2Btn) step1To2Btn.addEventListener('click', () => {
         const validatedElements = document.querySelectorAll('[data-is-next-step]');
-        if (validateAndScroll(validatedElements)) swiper.slideNext()
+        if (validateAndScroll(validatedElements)) {
+            swiper.slideNext()
+            scrollToStart()
+        }
     })
-    if (step2To1Btn) step2To1Btn.addEventListener('click', () => swiper.slidePrev())
-    if (step2To3Btn) step2To3Btn.addEventListener('click', () => swiper.slideNext())
-    if (step3To2Btn) step3To2Btn.addEventListener('click', () => swiper.slidePrev())
+    if (step2To1Btn) step2To1Btn.addEventListener('click', () => {
+        swiper.slidePrev()
+        scrollToStart()
+    })
+    if (step2To3Btn) step2To3Btn.addEventListener('click', () => {
+        swiper.slideNext()
+        scrollToStart()
+        dataCollect()
+    })
+    if (step3To2Btn) step3To2Btn.addEventListener('click', () => {
+        swiper.slidePrev() 
+        scrollToStart()
+    })
 
 
     // обработка радиокнопок
 
     const depth = configurator.querySelector('.js-set-depth')
-    const depthRadios = depth.querySelectorAll('input[type="radio"]')
     const frontDoor = configurator.querySelector('.js-variant-front')
-    const frontDoorRadios = frontDoor.querySelectorAll('input[type="radio"]')
     const backDoor = configurator.querySelector('.js-variant-back')
-    const backDoorRadios = backDoor.querySelectorAll('input[type="radio"]')
 
-    radioClickProcessing({
-        blockName: depth,
-        radiosArray: depthRadios,
-        attributeName: 'data-depth'
-    })
+    if(depth) {
+        const depthRadios = depth.querySelectorAll('input[type="radio"]')
+        radioClickProcessing({
+            blockName: depth,
+            radiosArray: depthRadios,
+            attributeName: 'data-depth'
+        })
+    }
 
-    radioClickProcessing({
-        blockName: frontDoor,
-        radiosArray: frontDoorRadios,
-        attributeName: 'data-front-door'
-    })
+    if(frontDoor) {
+        const frontDoorRadios = frontDoor.querySelectorAll('input[type="radio"]')
+        radioClickProcessing({
+            blockName: frontDoor,
+            radiosArray: frontDoorRadios,
+            attributeName: 'data-front-door'
+        })
+    }
 
-    radioClickProcessing({
-        blockName: backDoor,
-        radiosArray: backDoorRadios,
-        attributeName: 'data-back-door'
-    })
+    if(backDoor) {
+        const backDoorRadios = backDoor.querySelectorAll('input[type="radio"]')
+        radioClickProcessing({
+            blockName: backDoor,
+            radiosArray: backDoorRadios,
+            attributeName: 'data-back-door'
+        })
+    }
+
+    // тултипы для аксессуаров
+
+    const accessorisesItems = configurator.querySelectorAll('.accessorises__item')
+    if(accessorisesItems.length > 0) {
+        accessorisesItems.forEach(accessorise => {
+            const content = accessorise.getAttribute('data-tooltip')
+            const trigger = accessorise.querySelector('.accessorises__item-tooltip')
+            const placement = trigger.getAttribute('data-tooltip-placement')
+
+            if (trigger && content) {
+                tippy(trigger, {
+                    content,
+                    placement,
+                    allowHTML: true,
+                    interactive: window.innerWidth > 1280 ? true : false,
+                    animation: 'fade',
+                    duration: [200, 200],
+                    appendTo: () => document.body
+                })
+            }
+        })
+        accessorisesItems.forEach(accessorise => {
+            accessorise.addEventListener('click', () => {
+                accessorise.classList.toggle('selected')
+            })
+        })
+    }
+
+    const accessorisesCheckboxItems = configurator.querySelectorAll('.accessorises__checkbox-item')
+    if(accessorisesCheckboxItems.length > 0) {
+        accessorisesCheckboxItems.forEach(accessorise => {
+            const content = accessorise.getAttribute('data-tooltip')
+            const trigger = accessorise.querySelector('.accessorises__checkbox-tooltip')
+            const placement = trigger.getAttribute('data-tooltip-placement')
+
+            if (trigger && content) {
+                tippy(trigger, {
+                    content,
+                    placement,
+                    allowHTML: true,
+                    interactive: window.innerWidth > 1280 ? true : false,
+                    animation: 'fade',
+                    duration: [200, 200],
+                    appendTo: () => document.body
+                })
+            }
+        })
+    }
 }

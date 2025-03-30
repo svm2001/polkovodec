@@ -1,6 +1,6 @@
 import { disablePageScroll, enablePageScroll } from 'scroll-lock'
 
-export default function initHeader() {
+export default function header() {
   const header = document.querySelector('header')
   const headerLinks = document.querySelectorAll('.header__link')
 

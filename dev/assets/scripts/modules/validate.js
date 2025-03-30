@@ -8,7 +8,6 @@ export default function validate() {
     form.addEventListener('submit', event => {
       event.preventDefault()
       const inputs = form.querySelectorAll('.input'),
-        textareas = form.querySelectorAll('.textarea'),
         dataReqexp = {
           fio: /^[А-ЯЁа-яё]+(-[А-ЯЁа-яё]+)? [А-ЯЁа-яё]+( [А-ЯЁа-яё]+)?$/,
           personName: /^[а-яёА-ЯЁ ]+$/u,
@@ -97,10 +96,6 @@ export default function validate() {
           inputs.forEach(input => {
             validateInput(input)
           })
-
-          textareas.forEach(textarea => {
-            validateTextarea(textarea)
-          })
         },
         lifeValidate = () => {
           inputs.forEach(input => {
@@ -118,15 +113,7 @@ export default function validate() {
           let errors = 0
 
           inputs.forEach(input => {
-            if (input.classList.contains('input--error')) {
-              errors += 1
-            }
-          })
-
-          textareas.forEach(input => {
-            if (input.classList.contains('textarea--error')) {
-              errors += 1
-            }
+            if (input.classList.contains('input--error')) errors += 1
           })
 
           const formBody = form.querySelector('.form__body')
@@ -134,26 +121,89 @@ export default function validate() {
           const errorMsg = form.querySelector('.form__error')
 
           if (errors === 0) {
-            let formData = $(form).serialize()
-            console.log(formData)
-            $.ajax({
-              type: 'POST',
-              url: form.getAttribute('action') + '?ajax=Y',
-              data: formData,
-              // beforeSend: function() {
-              //   form.closest('.hystmodal__window').classList.add('loading');
-              // },
-              success: function (response) {
-                formBody.classList.add('hidden')
-                successMsg.style.display = 'flex'
-              },
-              error: function (error) {
-                // formBody.classList.add('hidden')
-                // successMsg.style.display = 'flex'
-                formBody.classList.add('hidden')
-                errorMsg.style.display = 'flex'
-              },
-            })
+            const isConfiguratorForm = form.hasAttribute('data-configurator-form')
+
+            if(isConfiguratorForm) {
+              const dataFromConfig = document.querySelector('.js-data')
+              const formData = new FormData()
+              
+              // основные данные
+              formData.append('height', dataFromConfig.querySelector('.js-data-height-value').textContent)
+              formData.append('depth', dataFromConfig.querySelector('.js-data-depth-value').textContent)
+              formData.append('frontDoor', dataFromConfig.querySelector('.js-front-door-value').textContent)
+              formData.append('backDoor', dataFromConfig.querySelector('.js-back-door-value').textContent)
+              formData.append('execution', dataFromConfig.querySelector('.js-data-execution-value').textContent)
+              formData.append('color', dataFromConfig.querySelector('.js-data-color-value').textContent)
+              
+              // Добавляем аксессуары
+              const sliderAccessories = Array.from(dataFromConfig.querySelectorAll('.js-data-accessorises-slider .swiper-slide .accessorises__item-name')).map(slide => slide.textContent.trim())
+              const checkboxAccessories = Array.from(dataFromConfig.querySelectorAll('.js-data-accessorises-checkboxes .checkbox__text')).map(text => text.textContent.trim())
+              
+              formData.append('accessories[slider]', JSON.stringify(sliderAccessories).replace(/\\/g, ''))
+              formData.append('accessories[checkboxes]', JSON.stringify(checkboxAccessories).replace(/\\/g, ''))
+
+              // Добавляем контактные данные (имя, телефон, email)
+              const formInputs = form.querySelectorAll('input')
+              formInputs.forEach(input => formData.append(input.name, input.value))
+
+              console.table(Object.fromEntries(formData))
+
+              const configuratorForm = document.querySelector('.configurator__slider')
+              const configurator = document.querySelector('.configurator')
+              const stepCounter = document.querySelector('.configurator__step')
+
+              const successMsg = configurator.querySelector('.js-form-success')
+              const errorMsg = configurator.querySelector('.js-form-error')
+              
+              const hideForm = () => {
+                configuratorForm.remove()
+                stepCounter.remove()
+                configurator.scrollIntoView({
+                  behavior: 'instant',
+                  block: 'center'
+                });
+              }
+
+              $.ajax({
+                type: 'POST',
+                url: form.getAttribute('action') + '?ajax=Y',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                  hideForm()
+                  successMsg.style.display = 'block'
+                },
+                error: function (error) {
+                  hideForm()
+                  errorMsg.style.display = 'block'
+                  console.error('Ошибка при отправке формы: ',error.responseText);
+                },
+              })
+            } else {
+              const formData = new FormData()
+              const formInputs = form.querySelectorAll('input')
+              formInputs.forEach(input => formData.append(input.name, input.value))
+
+              console.table(Object.fromEntries(formData))
+
+              $.ajax({
+                type: 'POST',
+                url: form.getAttribute('action') + '?ajax=Y',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                  formBody.classList.add('hidden')
+                  successMsg.style.display = 'flex'
+                },
+                error: function (error) {
+                  formBody.classList.add('hidden')
+                  errorMsg.style.display = 'flex'
+                  console.error('Ошибка при отправке формы: ',error.responseText);
+                },
+              })
+            }
           }
         }
 

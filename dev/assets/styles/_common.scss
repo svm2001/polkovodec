@@ -1,0 +1,108 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: $primary-font!important;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: normal;
+  color: $black;
+}
+
+@media (max-width: 1280px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+html,
+body {
+  position: relative;
+  width: 100%;
+  background-color: $white;
+  overflow-x: hidden;
+}
+
+body {
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: .4s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+  }
+}
+
+body.lock {
+  &::before {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+button {
+  font-family: $primary-font!important;
+}
+
+p {
+  margin: 0;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+*:focus-visible {
+  outline-color: $black;
+  outline-style: dotted;
+  outline-width: 3px;
+  outline-offset: 5px;
+  -moz-outline-radius: 30px;
+  transition: 0s;
+}
+
+.lazy-load {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  
+  &.lazy-loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1320px;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page {
+  flex: 1 0 auto;
+}
+
+.hidden {
+  display: none;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}

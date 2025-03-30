@@ -9,11 +9,13 @@ block content
   include ../../components/characteristics
   include ../../components/developments
   include ../../components/configurator/configurator
-  
+  include ../../components/video
   .wrapper
     +hero
     .lazy-load(data-lazy="characteristics")
       +characteristics
+    .lazy-load(data-lazy="video")
+      +video
     .lazy-load(data-lazy="constructive")
       +constructive
     .lazy-load(data-lazy="configurator")

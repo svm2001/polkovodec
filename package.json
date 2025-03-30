@@ -41,6 +41,7 @@
     "scrolltrigger": "^1.0.1",
     "simplebar": "^6.2.5",
     "swiper": "^10.3.1",
+    "tippy.js": "^6.3.7",
     "vanilla-lazyload": "^17.8.5"
   }
 }

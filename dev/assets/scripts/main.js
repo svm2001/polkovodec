@@ -1,11 +1,9 @@
 import lazyLoad from './modules/lazyload'
 import modal from './modules/modal'
-import header from './modules/header.js'
-import validate from './modules/validate.js'
-import phoneMask from './modules/phoneMask.js'
-import constructive from './modules/constructive.js'
-import initHeader from './modules/header'
-import initConstructive from './modules/constructive'
+import validate from './modules/validate'
+import phoneMask from './modules/phoneMask'
+import constructive from './modules/constructive'
+import header from './modules/header'
 import sliderBlock from './modules/sliderBlock'
 import characteristics from './modules/characteristics'
 import accordions from './modules/accordions'
@@ -16,17 +14,18 @@ import range from './modules/range'
 import switcher from './modules/switch'
 import colorDefault from './modules/color-default'
 import colorCustom from './modules/color-custom'
+import lazyBlocks from './modules/lazy-blocks'
+import video from './modules/video'
 // import preloader from 'preloader-js';
 
 export default function main() {
+  lazyBlocks()
   lazyLoad()
   modal()
   header()
   validate()
   phoneMask()
   constructive()
-  initHeader()
-  initConstructive()
   sliderBlock()
   characteristics()
   accordions()
@@ -37,30 +36,9 @@ export default function main() {
   switcher()
   colorDefault()
   colorCustom()
+  video()
 
   // setTimeout(() => {
   //     preloader.hide()
   // }, 500)
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  const lazyElements = document.querySelectorAll('.lazy-load');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const element = entry.target;
-        element.classList.add('lazy-loaded');
-        observer.unobserve(element);
-      }
-    });
-  }, {
-    root: null,
-    rootMargin: '50px',
-    threshold: 0.1
-  });
-
-  lazyElements.forEach(element => {
-    observer.observe(element);
-  });
-
-})
