@@ -73,20 +73,20 @@ mixin characteristics(props = defaultCharacteristicsProps, ...dataset)
         .characteristics__accordions
           each item in characteristicsData.items
             .accordion
-              .accordion__icon
-                img.lazy.accordion__icon--static(
-                  src="./images/no-image.jpg",
-                  data-src=`./images/characteristics/icons/${item.icon}.svg`,
-                  alt="img"
-                )
-                img.lazy.accordion__icon--hover(
-                  src="./images/no-image.jpg",
-                  data-src=`./images/characteristics/icons/${item.iconHover}.svg`,
-                  alt="img"
-                )
               .accordion__intro
+                .accordion__icon
+                  img.lazy.accordion__icon--static(
+                    src="./images/no-image.jpg",
+                    data-src=`./images/characteristics/icons/${item.icon}.svg`,
+                    alt="img"
+                  )
                 .accordion__title= item.title
               .accordion__content= item.text
+                img.lazy.accordion__icon--hover(
+                    src="./images/no-image.jpg",
+                    data-src=`./images/characteristics/icons/${item.iconHover}.svg`,
+                    alt="img"
+                )
         .characteristics__poster-inner
           .characteristics__poster-wrapper
             .characteristics__country

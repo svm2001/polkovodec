@@ -381,7 +381,14 @@
         }
 
         &--hover {
-          opacity: 0;
+          opacity: 1;
+          position: absolute;
+          bottom: 10px;
+          right: 10px;  
+          min-width: 32px;
+          max-width: 32px;
+          max-height: 32px;
+          min-height: 32px;
         }
       }
 
@@ -406,7 +413,7 @@
         }
 
         .accordion__content {
-          padding: 8px 50px 8px 9px;
+          padding: 8px 60px 8px 9px;
           opacity: 1;
           background-color: $primary-green;
         }
