@@ -4,14 +4,16 @@ export default function characteristics() {
   if (!characeristics) return
 
   const items = characeristics.querySelectorAll('.characteristics__item')
-  const images = characeristics.querySelectorAll(
-    '.characteristics__poster img.poster',
-  )
+  const images = characeristics.querySelectorAll('.desktop .characteristics__poster img.poster')
   const container = characeristics.querySelector('.characteristics__items')
   const mobAccordions = characeristics.querySelectorAll(
     '.characteristics__accordions .accordion',
   )
-  const isDesktopRes = window.innerWidth > 1280
+  const desktopRes = window.innerWidth > 1280
+
+  desktopRes 
+    ? document.querySelectorAll('.mobile').forEach(item => item.remove())
+    : document.querySelector('.desktop').remove()
 
   const displayImages = (index = 0) => {
     images.forEach(img => {
@@ -56,6 +58,6 @@ export default function characteristics() {
   }
 
   displayImages()
-  isDesktopRes ? desktop() : mobile()
+  desktopRes ? desktop() : mobile()
   container.addEventListener('mouseleave', () => displayImages())
 }

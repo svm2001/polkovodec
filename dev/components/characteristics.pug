@@ -88,7 +88,26 @@ mixin characteristics(props = defaultCharacteristicsProps, ...dataset)
                     data-src=`./images/characteristics/icons/${item.iconHover}.svg`,
                     alt="img"
                 )
-        .characteristics__poster-inner
+            .characteristics__poster-inner.mobile
+              .characteristics__poster-wrapper
+                .characteristics__country
+                  img.lazy(
+                    src="./images/no-image.jpg",
+                    data-src="./images/characteristics/russia.svg",
+                    alt=constructiveData.title
+                  )
+                img.lazy.characteristics__label(
+                  src="./images/no-image.jpg",
+                  data-src="./images/characteristics/label.png",
+                  alt=constructiveData.title
+                )
+                .characteristics__poster
+                  img.lazy.poster(
+                    src="./images/no-image.jpg",
+                    data-src=`./images/characteristics/${item.image}`,
+                    alt=item.title,
+                  )    
+        .characteristics__poster-inner.desktop
           .characteristics__poster-wrapper
             .characteristics__country
               img.lazy(

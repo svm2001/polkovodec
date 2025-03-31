@@ -3,7 +3,7 @@
       classes: '',
       title: 'Универсальные телекоммуникационные',
       titleMob: 'Универсальные телекоммуникац.',
-      markedTitle: 'шкафы ДОБРЫНЯ©',
+      markedTitle: 'шкафы ДОБРЫНЯ',
       subtitle: 'Эффективная организация пространства серверных помещений и мобильных передвижных пунктов',
       btnName: 'Собрать шкаф'
   }
@@ -43,5 +43,6 @@ mixin hero(props = defaultHeroProps, ...dataset)
           span.hero__title-text= checkProps.title
           span.hero__title-text.hero__title-text--mob= checkProps.titleMob
           span.hero__title-marked= checkProps.markedTitle
+            sup ®
         .hero__subtitle= checkProps.subtitle
         +btn({ name: checkProps.btnName, }, {'data-smooth-scrolling': '#configurator'})
