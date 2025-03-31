@@ -284,7 +284,7 @@
     }
 
     &__accordions {
-      gap: 3px;
+      gap: 12px;
     }
 
     &__poster {
@@ -393,7 +393,6 @@
       }
 
       &__content {
-        padding: 0 50px 0 9px;
         max-height: 0;
         overflow: hidden;
         will-change: max-height;
@@ -401,9 +400,14 @@
         color: #f1f1f1;
         opacity: 0;
         background-color: #f5f4fa;
+
+        &-inner {
+          padding: 8px 50px 16px 9px;
+        }
       }
 
       &__active {
+        background-color: $primary-green;
         .accordion__intro {
           background: $primary-green;
         }
@@ -413,7 +417,6 @@
         }
 
         .accordion__content {
-          padding: 8px 60px 8px 9px;
           opacity: 1;
           background-color: $primary-green;
         }

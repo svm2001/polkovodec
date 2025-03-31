@@ -81,7 +81,8 @@ mixin characteristics(props = defaultCharacteristicsProps, ...dataset)
                     alt="img"
                   )
                 .accordion__title= item.title
-              .accordion__content= item.text
+              .accordion__content 
+                .accordion__content-inner= item.text
                 img.lazy.accordion__icon--hover(
                     src="./images/no-image.jpg",
                     data-src=`./images/characteristics/icons/${item.iconHover}.svg`,
