@@ -147,6 +147,7 @@ export const dataCollect = () => {
           tippy(trigger, {
             content,
             placement,
+            trigger: window.innerWidth > 1280 ? 'mouseenter' : 'click',
             allowHTML: true,
             interactive: window.innerWidth > 1280 ? true : false,
             animation: 'fade',
