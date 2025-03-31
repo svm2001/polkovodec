@@ -31,7 +31,7 @@ export default function constructive() {
     debounceTimeout = setTimeout(() => {
       updateImage(defaultImage)
       constructiveItems.forEach(item => item.classList.remove('active'))
-    }, 5)
+    }, 0)
   }
 
   const constructiveList = document.querySelector('.constructive__list')
