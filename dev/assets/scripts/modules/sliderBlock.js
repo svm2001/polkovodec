@@ -41,7 +41,7 @@ export default function sliderBlock() {
     breakpoints: {
       1281: {
         pagination: false,
-        spaceBetween: 0,
+        spaceBetween: 210,
         coverflowEffect: {
           rotate: 0,
           stretch: -1000,

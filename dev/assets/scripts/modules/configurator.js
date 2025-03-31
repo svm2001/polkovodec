@@ -119,6 +119,19 @@ export default function configurator() {
       scrollToStart()
     })
 
+  // установка значений по умолчанию
+  const depthDefault = configurator.querySelector('[data-depth]')
+  const depthValue = depthDefault.querySelector('input[type="radio"]:checked').nextElementSibling.textContent
+  depthDefault.setAttribute('data-depth', depthValue)
+
+  const frontDoorDefault = configurator.querySelector('[data-front-door]')
+  const frontDoorValue = frontDoorDefault.querySelector('input[type="radio"]:checked').nextElementSibling.textContent
+  frontDoorDefault.setAttribute('data-front-door', frontDoorValue)
+
+  const backDoorDefault = configurator.querySelector('[data-back-door]')
+  const backDoorValue = backDoorDefault.querySelector('input[type="radio"]:checked').nextElementSibling.textContent
+  backDoorDefault.setAttribute('data-back-door', backDoorValue)
+
   // обработка радиокнопок
 
   const depth = configurator.querySelector('.js-set-depth')

@@ -17,13 +17,13 @@ include ../../ui/colorsCustom
           span.configurator__slide-item-title-value
         +range({ values: [12, 18, 21, 24, 36, 42], selected: 12, prefix: 'U' }) 
       .configurator__slide-item.configurator__slide-item--depth.js-set-depth(
-        data-is-next-step="false",
-        data-depth
+        data-is-next-step="true",
+        data-depth=''
       )
         .configurator__slide-item-title
           span Глубина стойки
         .radios
-          +radio({ text: '400 мм', checked: false, name: 'depth' })
+          +radio({ text: '400 мм', checked: true, name: 'depth' })
           +radio({ text: '600 мм', checked: false, name: 'depth' })
           +radio({ text: '800 мм', checked: false, name: 'depth' }) 
           +radio({ text: '1000 мм', checked: false, name: 'depth' })
@@ -33,20 +33,20 @@ include ../../ui/colorsCustom
           span Варианты комплектации дверей
         .variants
           .variants__item.js-variant-front(
-            data-is-next-step="false",
+            data-is-next-step="true",
             data-front-door
           )
             .variants__item-title Фронтальная дверь
             .variants__item-radios
-              +radio({ text: 'одностворчатая', checked: false, name: 'front-door' })
+              +radio({ text: 'одностворчатая', checked: true, name: 'front-door' })
               +radio({ text: 'двустворчатая', checked: false, name: 'front-door' })
           .variants__item.js-variant-back(
-            data-is-next-step="false",
+            data-is-next-step="true",
             data-back-door
           )
             .variants__item-title Задняя дверь
             .variants__item-radios
-              +radio({ text: 'одностворчатая', checked: false, name: 'back-door' })
+              +radio({ text: 'одностворчатая', checked: true, name: 'back-door' })
               +radio({ text: 'двустворчатая', checked: false, name: 'back-door' })
       .configurator__slide-item.configurator__slide-item--execution.js-set-execution(
         data-is-next-step="true"
