@@ -12,6 +12,7 @@
 
   &__content {
     display: flex;
+    justify-content: space-between;
   }
 
   &__list {
@@ -22,8 +23,6 @@
     gap: 40px;
 
     &--right {
-      margin-left: auto;
-
       .constructive__item {
         justify-content: flex-start;
       }
