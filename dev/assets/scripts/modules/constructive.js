@@ -23,7 +23,7 @@ export default function constructive() {
 
       constructiveItems.forEach(item => item.classList.remove('active'))
       item.classList.add('active')
-    }, 5)
+    }, 0)
   }
 
   const handleMouseLeave = () => {
