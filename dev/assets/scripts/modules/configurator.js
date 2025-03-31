@@ -162,7 +162,8 @@ export default function configurator() {
       const placement = trigger.getAttribute('data-tooltip-placement')
 
       if (trigger && content) {
-        
+        trigger.addEventListener('click', e => e.stopPropagation())
+
         tippy(trigger, {
           content,
           placement,

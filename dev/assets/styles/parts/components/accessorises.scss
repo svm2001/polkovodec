@@ -206,9 +206,21 @@
     }
 
     &__item-row {
-      top: 14px;
-      left: 14px;
-      width: calc(100% - 28px);
+      top: 12px;
+      left: 50%;
+      align-items: flex-start;
+      transform: translateX(-50%);
+      width: calc(100% - 24px);
+    }
+
+    &__item-tooltip {
+      width: 30px;
+      height: 30px;
+      padding: 9px;
+      top: -8px;
+      left: -8px;
+      position: relative;
+      z-index: 4;
     }
 
     .accessorises__item-selected-icon {
