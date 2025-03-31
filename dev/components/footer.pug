@@ -42,7 +42,7 @@ mixin footer(props = defaultFooterProps, ...dataset)
 
               p.footer__form-agreement Нажимая на кнопку, вы соглашаетесь с
                 | &nbsp;
-                a(href="javascript:void(0)") политикой конфиденциальности
+                a(href="/policy.html") политикой конфиденциальности
             .form__success
               .form__success-check
                 include ../assets/icon-system/icon-check
@@ -64,7 +64,10 @@ mixin footer(props = defaultFooterProps, ...dataset)
             include ../assets/icon-system/icon-footer-logo
         .footer__bottom
           .footer__bottom-logo
-            include ../assets/icon-system/icon-footer-logo-text
+            img.breadcrumb__separator(
+              src='./images/footer-text.svg',
+              alt="footer-text"
+            )
           .footer__bottom-links
             a.footer__bottom-links-item(href="javascript:void(0)") Политика конфиденциальности
             a.footer__bottom-links-item(href="javascript:void(0)") Файлы куки

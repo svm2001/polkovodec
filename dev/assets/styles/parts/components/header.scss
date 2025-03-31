@@ -149,9 +149,9 @@
   }
 }
 
-.header.scrollable {
+.header.scrollable, .header.header--policy {
   background: $white;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.33);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   .header__logo-white {
     display: none;
   }

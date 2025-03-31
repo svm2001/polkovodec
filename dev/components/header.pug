@@ -34,9 +34,9 @@ mixin header(props = defaultHeaderProps, ...dataset)
     .container
       .header__inner
         .header__nav
-          .header__logo-white
+          a(href='/').header__logo-white
             include ../assets/icon-system/icon-logo-white
-          .header__logo-dark
+          a(href='/').header__logo-dark
             include ../assets/icon-system/icon-logo-dark
           nav
             each link in checkProps.links
@@ -76,7 +76,7 @@ mixin header(props = defaultHeaderProps, ...dataset)
 
           p.header__form-agreement Нажимая на кнопку, вы соглашаетесь с
             | &nbsp;
-            a(href="javascript:void(0)") политикой конфиденциальности
+            a(href="/policy.html") политикой конфиденциальности
 
         .form__success
           .form__success-check
@@ -120,7 +120,7 @@ mixin header(props = defaultHeaderProps, ...dataset)
 
         p.header__form-agreement Нажимая на кнопку, вы соглашаетесь с
           | &nbsp;
-          a(href="javascript:void(0)") политикой конфиденциальности
+          a(href="/policy.html") политикой конфиденциальности
       .form__success
         .form__success-check
           include ../assets/icon-system/icon-check

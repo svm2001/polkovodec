@@ -23,12 +23,15 @@ export default function video() {
     videoEl.pause()
   }
 
-  btn.addEventListener('click', () => play())
-  closeBtn.addEventListener('click', () => stop())
-
-  window.addEventListener('resize', () =>
+  const checkWidth = () => {
     window.innerWidth < 1441
       ? containerHide.classList.remove('container')
-      : containerHide.classList.add('container'),
-  )
+      : containerHide.classList.add('container')
+  }
+
+  btn.addEventListener('click', () => play())
+  closeBtn.addEventListener('click', () => stop())
+  window.addEventListener('resize', checkWidth)
+  
+  checkWidth()
 }
