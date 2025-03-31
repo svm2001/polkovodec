@@ -173,8 +173,9 @@
     &__list {
       gap: 16px;
       grid-template-columns: repeat(3, 1fr);
-      max-height: 100%;
-      overflow: hidden;
+      max-height: 50dvh;
+      // max-height: 100%;
+      // overflow: hidden;
     }
 
     &__title {
