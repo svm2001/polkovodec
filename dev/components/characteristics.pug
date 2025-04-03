@@ -83,30 +83,30 @@ mixin characteristics(props = defaultCharacteristicsProps, ...dataset)
                 .accordion__title= item.title
               .accordion__content 
                 .accordion__content-inner= item.text
-                img.lazy.accordion__icon--hover(
-                    src="./images/no-image.jpg",
-                    data-src=`./images/characteristics/icons/${item.iconHover}.svg`,
-                    alt="img"
-                )
-            .characteristics__poster-inner.mobile
-              .characteristics__poster-wrapper
-                .characteristics__country
-                  img.lazy(
-                    src="./images/no-image.jpg",
-                    data-src="./images/characteristics/russia.svg",
-                    alt=constructiveData.title
-                  )
-                img.lazy.characteristics__label(
-                  src="./images/no-image.jpg",
-                  data-src="./images/characteristics/label.png",
-                  alt=constructiveData.title
-                )
-                .characteristics__poster
-                  img.lazy.poster(
-                    src="./images/no-image.jpg",
-                    data-src=`./images/characteristics/${item.image}`,
-                    alt=item.title,
-                  )    
+                    img.lazy.accordion__icon--hover(
+                        src="./images/no-image.jpg",
+                        data-src=`./images/characteristics/icons/${item.iconHover}.svg`,
+                        alt="img"
+                    )
+                .characteristics__poster-inner.mobile
+                  .characteristics__poster-wrapper
+                    .characteristics__country
+                      img.lazy(
+                        src="./images/no-image.jpg",
+                        data-src="./images/characteristics/russia.svg",
+                        alt=constructiveData.title
+                      )
+                    img.lazy.characteristics__label(
+                      src="./images/no-image.jpg",
+                      data-src="./images/characteristics/label.png",
+                      alt=constructiveData.title
+                    )
+                    .characteristics__poster
+                      img.lazy.poster(
+                        src="./images/no-image.jpg",
+                        data-src=`./images/characteristics/${item.image}`,
+                        alt=item.title,
+                      )
         .characteristics__poster-inner.desktop
           .characteristics__poster-wrapper
             .characteristics__country
@@ -139,7 +139,7 @@ mixin characteristics(props = defaultCharacteristicsProps, ...dataset)
               data-src="./images/characteristics/file.svg",
               alt="file"
             )
-            span Длинное название сертификата
+            span Сертификат соответствия
           a.characteristics__certificate-item(
             href="javascript:void(0)",
             download="/"
@@ -149,6 +149,6 @@ mixin characteristics(props = defaultCharacteristicsProps, ...dataset)
               data-src="./images/characteristics/file.svg",
               alt="file"
             )
-            span Длинное название сертификата
+            span Паспорт изделия
         .characteristics__certificate
           span.characteristics__certificate-item Шкафы изготовлены в соответствии с ТУ 31.01.11-001-02694337-2024

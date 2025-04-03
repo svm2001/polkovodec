@@ -15,6 +15,8 @@ export default function accordions() {
     content.style.maxHeight = null
   }
 
+  if (accordions.length > 0) openAccordion(accordions[0])
+
   accordions.forEach(accordion => {
     const intro = accordion.querySelector('.accordion__intro')
     const content = accordion.querySelector('.accordion__content')
@@ -25,6 +27,17 @@ export default function accordions() {
       } else {
         accordions.forEach(accordion => closeAccordion(accordion))
         openAccordion(accordion)
+
+        setTimeout(() => {
+          const rect = accordion.getBoundingClientRect()
+          const scrollPosition = window.pageYOffset + rect.top - ((window.innerHeight - accordion.scrollHeight) / 2)
+
+          window.scrollTo({
+            top: scrollPosition,
+            behavior: 'smooth'
+          })
+        }, 310)
+    
       }
     }
   })

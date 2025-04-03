@@ -179,6 +179,8 @@ mixin accessorises(props = defaultAccessorisesProps, ...dataset)
     .accessorises__list
       each accessorise in accessorisesData
         .accessorises__item(
+          role="button" 
+          tabindex="0" 
           class={ "accessorises__item--img-full": accessorise.imgFull },
           data-tooltip=accessorise.tooltip
         )

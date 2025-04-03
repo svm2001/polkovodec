@@ -272,6 +272,10 @@
   .characteristics {
     padding-top: 80px;
 
+    .accordion {
+      scroll-margin-top: 50vh;
+    } 
+
     .mob-hide {
       display: none;
     }
@@ -336,6 +340,7 @@
 
     &__certificate {
       flex-direction: column;
+      align-items: flex-start;
       gap: 20px;
       margin: 0;
     }
@@ -405,7 +410,7 @@
         &--hover {
           opacity: 1;
           position: absolute;
-          bottom: 10px;
+          bottom: 16px;
           right: 10px;  
           min-width: 32px;
           max-width: 32px;
@@ -429,7 +434,7 @@
       }
 
       &__active {
-        background-color: $primary-green;
+        //background-color: $primary-green;
         .accordion__intro {
           background: $primary-green;
         }
@@ -440,7 +445,13 @@
 
         .accordion__content {
           opacity: 1;
-          background-color: $primary-green;
+          background: $white;
+          transform: translateY(-2px);
+
+          &-inner {
+            position: relative;
+            background-color: $primary-green;
+          }
         }
 
         .accordion__icon {
