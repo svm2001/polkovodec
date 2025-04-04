@@ -4,12 +4,12 @@
   }
 
   const characteristicsData = {
-    title: 'Шкаф ДОБРЫНЯ© - идеальное решение для надёжной защиты и эксплуатации телекоммуникационного оборудования',
+    title: 'Шкаф ДОБРЫНЯ® - идеальное решение для надёжной защиты и эксплуатации телекоммуникационного оборудования',
     items: [
       {
         title: 'Высокий уровень безопасности',
         image: '1.webp',
-        text: 'Прочный корпус из металла защищает от несанкционированного проникновения, двери и съёмные стенки запираются на ключ',
+        text: '<p>Прочный корпус из металла защищает от&nbsp;несанкционированного проникновения, двери&nbsp;и съёмные стенки запираются на ключ</p>',
         icon: 'shield',
         iconHover: 'shield-hover',
       },
@@ -23,21 +23,21 @@
       {
         title: 'Надежная защита от внешних воздействий ',
         image: '3.webp',
-        text: 'Устойчивость к различным климатическим условиям Температурный диапазон −40°C до +60°C Класс защиты — до IP55 при установке дополнительных аксессуаров',
+        text: '<p>Устойчивость к различным климатическим условиям</p> <p> Температурный диапазон −40°C до +60°C</p> <p> Класс защиты — до IP55 при установке дополнительных аксессуаров</p>',
         icon: 'umbrella',
         iconHover: 'umbrella-hover',
       },
       {
         title: 'Модульная конструкция',
         image: '4.webp',
-        text: 'Шкаф легко модифицируется под индивидуальные задачи. Для использования в передвижных пунктах управления — разработан мобильный вариант исполнения Широкие возможности по интеграции оборудования, аксессуаров и фурнитуры',
+        text: '<p>Шкаф легко модифицируется под индивидуальные задачи. Для использования в передвижных пунктах управления — разработан мобильный вариант исполнения</p> <p> Широкие возможности по интеграции оборудования, аксессуаров и фурнитуры</p>',
         icon: 'module',
         iconHover: 'module-hover',
       },
       {
         title: 'Прочность и облегченный вес',
         image: '5.webp',
-        text: 'Конструкция из алюминиевого профиля с усилением стальными элементами устойчива к повышенным нагрузкам при эксплуатации и транспортировке',
+        text: '<p>Конструкция из алюминиевого профиля с усилением стальными элементами устойчива к повышенным нагрузкам при эксплуатации и транспортировке</p>',
         icon: 'tool',
         iconHover: 'tool-hover',
       },
@@ -69,7 +69,7 @@ mixin characteristics(props = defaultCharacteristicsProps, ...dataset)
                   data-src=`./images/characteristics/icons/${item.iconHover}.svg`,
                   alt="img"
                 )
-              .characteristics__item-text= item.text
+              .characteristics__item-text!= item.text
         .characteristics__accordions
           each item in characteristicsData.items
             .accordion
@@ -82,7 +82,7 @@ mixin characteristics(props = defaultCharacteristicsProps, ...dataset)
                   )
                 .accordion__title= item.title
               .accordion__content 
-                .accordion__content-inner= item.text
+                .accordion__content-inner!= item.text
                     img.lazy.accordion__icon--hover(
                         src="./images/no-image.jpg",
                         data-src=`./images/characteristics/icons/${item.iconHover}.svg`,

@@ -17,7 +17,7 @@ import colorCustom from './modules/color-custom'
 import lazyBlocks from './modules/lazy-blocks'
 import video from './modules/video'
 import preloader from 'preloader-js'
-
+import hero from './modules/hero'
 export default function main() {
   lazyBlocks()
   lazyLoad()
@@ -37,6 +37,7 @@ export default function main() {
   colorDefault()
   colorCustom()
   video()
+  hero()
   
   setTimeout(() => preloader.hide(), 0)
 }

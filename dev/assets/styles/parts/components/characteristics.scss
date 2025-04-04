@@ -1,5 +1,5 @@
 .characteristics {
-  padding-top: 158px;
+  padding-top: 80px;
 
   &__accordions {
     display: none;
@@ -137,7 +137,7 @@
       font-size: 18px;
       font-weight: 500;
       text-transform: uppercase;
-      max-width: 277px;
+      max-width: 255px;
       min-height: 84px;
       transition: ease-in-out $transition;
     }
@@ -146,12 +146,12 @@
       background-color: $white;
       width: 100%;
       padding-right: 65px;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 400;
       color: $white;
       opacity: 0;
       transition: ease-in-out $transition;
-      padding: 12px 85px 12px 15px;
+      padding: 12px 85px 28px 15px;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -214,6 +214,26 @@
       }
     }
 
+    &:first-child {
+      .characteristics__item-text p {
+        max-width: 373px;
+      }
+    }
+
+    &:nth-child(3) {
+      .characteristics__item-text p {
+        max-width: 470px;
+        margin: 3px 0;
+      }
+    }
+
+    &:nth-child(4) {
+      .characteristics__item-text p {
+        max-width: 459px;
+        margin: 3px 0;
+      }
+    }
+
     &:last-child {
       padding: 12px 15px;
       display: flex;
@@ -233,10 +253,14 @@
 
       .characteristics__item-text {
         position: static;
-        padding: 0;
+        padding: 0 0 24px 0;
         padding-right: 85px;
         opacity: 0;
         background-color: transparent;
+
+        p {
+          max-width: 436px;
+        }
       }
 
       .characteristics__item-inner {

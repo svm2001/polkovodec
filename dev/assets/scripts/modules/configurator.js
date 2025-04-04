@@ -29,7 +29,7 @@ export default function configurator() {
     autoHeight: true,
     draggable: false,
     touchRatio: 0,
-    spaceBetween: 0,
+    spaceBetween: 20,
     on: {
       slideChange: function () {
         const activeSlide = this.slides[this.activeIndex]

@@ -28,5 +28,6 @@ mixin range(props = defaultRangeProps, ...dataset)
           data-range-value=value,
           data-range-prefix=checkProps.prefix
         )
-          span.range__points-item-dot
+          span.range__points-item-inner
+            span.range__points-item-dot
           span.range__points-item-text= value + checkProps.prefix
