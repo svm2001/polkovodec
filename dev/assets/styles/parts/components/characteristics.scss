@@ -150,6 +150,7 @@
       font-weight: 400;
       color: $white;
       opacity: 0;
+      visibility: hidden;
       transition: ease-in-out $transition;
       padding: 12px 85px 28px 15px;
       position: absolute;
@@ -211,6 +212,7 @@
 
       .characteristics__item-text {
         opacity: 1;
+        visibility: visible;
       }
     }
 
