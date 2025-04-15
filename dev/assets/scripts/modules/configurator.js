@@ -227,7 +227,7 @@ export default function configurator() {
       const destroyTippyInstances = () => {
         setTimeout(() => {
           const tippy = document.querySelector('[data-tippy-root]')
-          if(tippy) tippy.style.opacity = '0'
+          if(tippy) alert(tippy.getAttribute('id'))
         }, 200)
       }
 
