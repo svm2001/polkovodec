@@ -223,18 +223,19 @@ export default function configurator() {
   const accessoriseList = document.querySelector('.accessorises__list')
   
   if (accessoriseList) {
-    accessoriseList.addEventListener('scroll', () => {
-      if(window.innerWidth < 1200) {
-        const tippyBox = document.querySelector('.tippy-box')
-        tippyBox ? tippyBox.remove() : ''
+    if(window.innerWidth < 1200) {
+      const destroyTippyInstances = () => {
+        const tippyInstances = document.querySelectorAll('[data-tippy-root]')
+        tippyInstances.forEach(instance => {
+          const tippyInstance = instance._tippy
+          if (tippyInstance) {
+            tippyInstance.destroy()
+          }
+        })
       }
-    })
 
-    accessoriseList.addEventListener('touchmove', () => {
-      if(window.innerWidth < 1200) {
-        const tippyBox = document.querySelector('.tippy-box')
-        tippyBox ? tippyBox.remove() : ''
-      }
-    })
+      accessoriseList.addEventListener('scroll', destroyTippyInstances)
+      accessoriseList.addEventListener('touchmove', destroyTippyInstances)
+    }
   }
 }
