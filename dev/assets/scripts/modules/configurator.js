@@ -223,9 +223,14 @@ export default function configurator() {
   const accessoriseList = document.querySelector('.accessorises__list')
   
   if (accessoriseList) {
-    accessoriseList.addEventListener('scroll', () => {
-      const tippyBoxes = document.querySelectorAll('.tippy-box')
-      tippyBoxes.forEach(box => box.remove())
-    })
+    if(window.innerWidth < 1200) {
+      const removeTippyBoxes = () => {
+        const tippyBoxes = document.querySelectorAll('.tippy-box')
+        tippyBoxes.forEach(box => box.remove())
+      }
+      
+      accessoriseList.addEventListener('scroll', removeTippyBoxes)
+      accessoriseList.addEventListener('touchmove', removeTippyBoxes)
+    }
   }
 }
