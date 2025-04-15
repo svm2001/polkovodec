@@ -228,8 +228,11 @@ export default function configurator() {
         const tippyInstances = document.querySelectorAll('[data-tippy-root]')
         tippyInstances.forEach(instance => {
           const tippyInstance = instance._tippy
+
+          console.log(tippyInstance);
+          
           if (tippyInstance) {
-            tippyInstance.destroy()
+            tippyInstance.hide()
           }
         })
       }
