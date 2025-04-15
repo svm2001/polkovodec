@@ -223,20 +223,16 @@ export default function configurator() {
   const accessoriseList = document.querySelector('.accessorises__list')
   
   if (accessoriseList) {
-    if(window.innerWidth < 1200) {
-      const removeTippyBoxes = () => {
-        const tippyBoxes = document.querySelectorAll('.tippy-box')
-        tippyBoxes.forEach(box => box.remove())
+    accessoriseList.addEventListener('scroll', () => {
+      if(window.innerWidth < 1200) {
+        tippyBox ? document.querySelector('.tippy-box').remove() : ''
       }
-      
-      accessoriseList.addEventListener('scroll', () => {
-        removeTippyBoxes
-        alert(1)
-      })
-      accessoriseList.addEventListener('touchmove', () => {
-        removeTippyBoxes
-        alert(2)
-      })
-    }
+    })
+    
+    accessoriseList.addEventListener('touchmove', () => {
+      if(window.innerWidth < 1200) {
+        tippyBox ? document.querySelector('.tippy-box').remove() : ''
+      }
+    })
   }
 }
