@@ -227,11 +227,11 @@ export default function configurator() {
       const destroyTippyInstances = () => {
         setTimeout(() => {
           const tippy = document.querySelector('[data-tippy-root]')
-          if(tippy) alert(tippy.getAttribute('id'))
+          if(tippy) tippy.remove()
         }, 200)
       }
 
-      accessoriseList.addEventListener('scroll', destroyTippyInstances)
+      // accessoriseList.addEventListener('scroll', destroyTippyInstances)
       accessoriseList.addEventListener('touchmove', destroyTippyInstances)
     }
   }
