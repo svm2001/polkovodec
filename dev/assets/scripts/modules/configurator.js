@@ -225,16 +225,10 @@ export default function configurator() {
   if (accessoriseList) {
     if(window.innerWidth < 1200) {
       const destroyTippyInstances = () => {
-        const tippyInstances = document.querySelectorAll('[data-tippy-root]')
-        tippyInstances.forEach(instance => {
-          const tippyInstance = instance._tippy
-
-          console.log(tippyInstance);
-          
-          if (tippyInstance) {
-            tippyInstance.hide()
-          }
-        })
+        setTimeout(() => {
+          const tippy = document.querySelector('[data-tippy-root]')
+          if(tippy) tippy.style.opacity = '0'
+        }, 200)
       }
 
       accessoriseList.addEventListener('scroll', destroyTippyInstances)
