@@ -157,6 +157,15 @@
   }
 }
 
+[data-tippy-root] {
+  z-index: 0!important;
+}
+
+.accessorises {
+  position: relative;
+  z-index: 2!important;
+}
+
 .tippy-content,
 .tippy-box {
   padding: 0px !important;
