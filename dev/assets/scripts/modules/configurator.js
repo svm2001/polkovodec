@@ -229,8 +229,14 @@ export default function configurator() {
         tippyBoxes.forEach(box => box.remove())
       }
       
-      accessoriseList.addEventListener('scroll', removeTippyBoxes)
-      accessoriseList.addEventListener('touchmove', removeTippyBoxes)
+      accessoriseList.addEventListener('scroll', () => {
+        removeTippyBoxes
+        alert(1)
+      })
+      accessoriseList.addEventListener('touchmove', () => {
+        removeTippyBoxes
+        alert(2)
+      })
     }
   }
 }
