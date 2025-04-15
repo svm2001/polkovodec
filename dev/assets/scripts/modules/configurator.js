@@ -219,4 +219,13 @@ export default function configurator() {
       }
     })
   }
+
+  const accessoriseList = document.querySelector('.accessorises__list')
+  
+  if (accessoriseList) {
+    accessoriseList.addEventListener('scroll', () => {
+      const tippyBoxes = document.querySelectorAll('.tippy-box')
+      tippyBoxes.forEach(box => box.remove())
+    })
+  }
 }
