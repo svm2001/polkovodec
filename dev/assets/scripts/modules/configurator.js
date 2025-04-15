@@ -225,13 +225,15 @@ export default function configurator() {
   if (accessoriseList) {
     accessoriseList.addEventListener('scroll', () => {
       if(window.innerWidth < 1200) {
-        tippyBox ? document.querySelector('.tippy-box').remove() : ''
+        const tippyBox = document.querySelector('.tippy-box')
+        tippyBox ? tippyBox.remove() : ''
       }
     })
-    
+
     accessoriseList.addEventListener('touchmove', () => {
       if(window.innerWidth < 1200) {
-        tippyBox ? document.querySelector('.tippy-box').remove() : ''
+        const tippyBox = document.querySelector('.tippy-box')
+        tippyBox ? tippyBox.remove() : ''
       }
     })
   }
