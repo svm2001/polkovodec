@@ -168,6 +168,8 @@ export default function configurator() {
   // тултипы для аксессуаров
 
   const accessorisesItems = configurator.querySelectorAll('.accessorises__item')
+  const accessoriseList = document.querySelector('.accessorises__list')
+
   if (accessorisesItems.length > 0) {
     accessorisesItems.forEach(accessorise => {
       const content = accessorise.getAttribute('data-tooltip')
@@ -184,7 +186,7 @@ export default function configurator() {
           interactive: window.innerWidth > 1280 ? true : false,
           animation: 'fade',
           duration: [200, 200],
-          appendTo: () => document.body,
+          appendTo: () => accessoriseList,
         })
       }
     })
@@ -218,21 +220,5 @@ export default function configurator() {
         })
       }
     })
-  }
-
-  const accessoriseList = document.querySelector('.accessorises__list')
-  
-  if (accessoriseList) {
-    if(window.innerWidth < 1200) {
-      const destroyTippyInstances = () => {
-        setTimeout(() => {
-          const tippy = document.querySelector('[data-tippy-root]')
-          if(tippy) tippy.remove()
-        }, 200)
-      }
-
-      // accessoriseList.addEventListener('scroll', destroyTippyInstances)
-      accessoriseList.addEventListener('touchmove', destroyTippyInstances)
-    }
   }
 }
