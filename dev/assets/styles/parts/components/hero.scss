@@ -161,7 +161,7 @@
       br {
         display: none;
       }
-      height: 38px;
+      height: 32px;
 
       &--subtitle {
         margin-top: 10px;
@@ -185,7 +185,9 @@
     }
 
     &__title {
-      line-height: 120%;
+      line-height: 110%;
+      font-size: 23px;
+      letter-spacing: -0.5px;
 
       &-marked {
         sup {

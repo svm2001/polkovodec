@@ -2,7 +2,7 @@
   const defaultHeroProps = {
       classes: '',
       title: 'Универсальные телекоммуникационные',
-      titleMob: 'Универсальные телекоммуникац.',
+      titleMob: 'Универсальные телекоммуникационные',
       markedTitle: 'шкафы ДОБРЫНЯ',
       subtitle: 'Эффективная организация пространства серверных помещений и мобильных передвижных пунктов',
       btnName: 'Собрать шкаф'
@@ -47,7 +47,7 @@ mixin hero(props = defaultHeroProps, ...dataset)
           .js-motion.js-motion--mob
             span.hero__title-text.hero__title-text--mob Универсальные
           .js-motion.js-motion--mob
-            span.hero__title-text.hero__title-text--mob телекоммуникац.
+            span.hero__title-text.hero__title-text--mob телекоммуникационные
           .js-motion
             span
               span.hero__title-marked= checkProps.markedTitle
@@ -56,5 +56,5 @@ mixin hero(props = defaultHeroProps, ...dataset)
             p.hero__subtitle-mask Эффективная организация пространства серверных <br>помещений и мобильных передвижных пунктов
             span.hero__subtitle Эффективная организация пространства серверных <br>помещений и мобильных передвижных пунктов
           .js-motion.js-motion--btn
-            span 
+            span
               +btn({ name: checkProps.btnName }, {'data-smooth-scrolling': '#configurator'})
