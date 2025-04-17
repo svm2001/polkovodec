@@ -12,6 +12,7 @@ export const dataCollect = () => {
     '.configurator__slide-item-title-value',
   )
   const depthValue = document.querySelector('.js-set-depth')
+  const verticalTypeValue = document.querySelector('.js-vertical-type')
   const frontDoorValue = document.querySelector('.js-variant-front')
   const backDoorValue = document.querySelector('.js-variant-back')
   const executionValue = document.querySelector('.js-set-execution')
@@ -26,6 +27,7 @@ export const dataCollect = () => {
 
   const heightDataValue = data.querySelector('.js-data-height-value')
   const depthDataValue = data.querySelector('.js-data-depth-value')
+  const verticalTypeDataValue = data.querySelector('.js-data-vertical-type-value')
   const frontDoorDataValue = data.querySelector('.js-front-door-value')
   const backDoorDataValue = data.querySelector('.js-back-door-value')
   const executionDataValue = data.querySelector('.js-data-execution-value')
@@ -33,6 +35,7 @@ export const dataCollect = () => {
 
   const heightBlock = data.querySelector('.js-data-height')
   const depthBlock = data.querySelector('.js-data-depth')
+  const verticalTypeBlock = data.querySelector('.js-data-vertical-type')
   const doorBlock = data.querySelector('.js-variants')
   const executionBlock = data.querySelector('.js-data-execution')
   const colorBlock = data.querySelector('.js-data-color')
@@ -52,10 +55,14 @@ export const dataCollect = () => {
     depthDataValue.textContent = depthValue.getAttribute('data-depth')
   }
 
+  if (verticalTypeValue) {
+    verticalTypeBlock.classList.add('visible')
+    verticalTypeDataValue.textContent = verticalTypeValue.getAttribute('data-vertical-type')
+  }
+
   if (frontDoorValue) {
     doorBlock.classList.add('visible')
-    frontDoorDataValue.textContent =
-      frontDoorValue.getAttribute('data-front-door')
+    frontDoorDataValue.textContent = frontDoorValue.getAttribute('data-front-door')
   }
 
   if (backDoorValue) {

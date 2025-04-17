@@ -15,7 +15,7 @@ include ../../ui/colorsCustom
         .configurator__slide-item-title
           span Высота стойки
           span.configurator__slide-item-title-value
-        +range({ values: [12, 18, 21, 24, 36, 42], selected: 12, prefix: 'U' }) 
+        +range({ values: [12, 18, 21, 24, 36, 42], selected: 12, prefix: 'U' })
       .configurator__slide-item.configurator__slide-item--depth.js-set-depth(
         data-is-next-step="true",
         data-depth=''
@@ -25,9 +25,18 @@ include ../../ui/colorsCustom
         .radios
           +radio({ text: '400 мм', checked: true, name: 'depth' })
           +radio({ text: '600 мм', checked: false, name: 'depth' })
-          +radio({ text: '800 мм', checked: false, name: 'depth' }) 
+          +radio({ text: '800 мм', checked: false, name: 'depth' })
           +radio({ text: '1000 мм', checked: false, name: 'depth' })
           +radio({ text: '1200 мм', checked: false, name: 'depth' })
+      .configurator__slide-item.configurator__slide-item--vertical-type.js-vertical-type(
+        data-is-next-step="true",
+        data-vertical-type=''
+      )
+        .configurator__slide-item-title
+          span Тип вертикальной стойки
+        .radios
+          +radio({text: 'Стандартная с квадратными отверстиями (шкала в U)', checked: true, name: 'vertical-type'})
+          +radio({text: 'Регулируемая с Т-образным пазом (шкала в мм)', checked: false, name: 'vertical-type'})
       .configurator__slide-item.configurator__slide-item--variant.js-set-variants
         .configurator__slide-item-title
           span Варианты комплектации дверей
@@ -53,7 +62,7 @@ include ../../ui/colorsCustom
       )
         .configurator__slide-item-title
           span Исполнение
-        +switch({ values: ['стационарное', 'мобильное'], selected: 'стационарное' }) 
+        +switch({ values: ['стационарное', 'мобильное'], selected: 'стационарное' })
       .configurator__slide-item.configurator__slide-item--colors.js-set-color(
         data-is-next-step="false",
         data-color-end

@@ -145,6 +145,14 @@
         }
       }
 
+      &--vertical-type {
+        .radios {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+
       &--variant {
         .variants {
           display: flex;
@@ -578,4 +586,8 @@
       display: block;
     }
   }
+}
+
+.js-data-vertical-type-value {
+  text-align: right;
 }

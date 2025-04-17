@@ -132,11 +132,16 @@ export default function configurator() {
   const backDoorValue = backDoorDefault.querySelector('input[type="radio"]:checked').nextElementSibling.textContent
   backDoorDefault.setAttribute('data-back-door', backDoorValue)
 
+  const verticalTypeDefault = configurator.querySelector('[data-vertical-type]')
+  const verticalTypeValue = verticalTypeDefault.querySelector('input[type="radio"]:checked').nextElementSibling.textContent
+  verticalTypeDefault.setAttribute('data-vertical-type', verticalTypeValue)
+
   // обработка радиокнопок
 
   const depth = configurator.querySelector('.js-set-depth')
   const frontDoor = configurator.querySelector('.js-variant-front')
   const backDoor = configurator.querySelector('.js-variant-back')
+  const verticalType = configurator.querySelector('.js-vertical-type')
 
   if (depth) {
     const depthRadios = depth.querySelectorAll('input[type="radio"]')
@@ -162,6 +167,15 @@ export default function configurator() {
       blockName: backDoor,
       radiosArray: backDoorRadios,
       attributeName: 'data-back-door',
+    })
+  }
+
+  if (verticalType) {
+    const verticalTypeRadios = verticalType.querySelectorAll('input[type="radio"]')
+    radioClickProcessing({
+      blockName: verticalType,
+      radiosArray: verticalTypeRadios,
+      attributeName: 'data-vertical-type',
     })
   }
 
