@@ -31,11 +31,15 @@ export default function constructive() {
     debounceTimeout = setTimeout(() => {
       updateImage(defaultImage)
       constructiveItems.forEach(item => item.classList.remove('active'))
+      console.log(1);
+      
     }, 0)
   }
 
-  const constructiveList = document.querySelector('.constructive__list')
-  constructiveList.addEventListener('mouseleave', handleMouseLeave)
+  const constructiveList = document.querySelectorAll('.constructive__list')
+  constructiveList.forEach(list => {
+    list.addEventListener('mouseleave', handleMouseLeave)
+  })
   constructiveItems.forEach(item =>
     item.addEventListener('mouseenter', handleMouseEnter),
   )
