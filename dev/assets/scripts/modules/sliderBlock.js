@@ -19,6 +19,7 @@ export default function sliderBlock() {
     slidesPerView: 1,
     slidesPerGroup: 1,
     centeredSlides: true,
+    autoHeight: true,
     draggable: false,
     speed: 1000,
     watchSlidesProgress: true,
