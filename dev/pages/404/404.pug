@@ -1,0 +1,16 @@
+block vars
+include ../../ui/btn
+
+block content
+  .wrapper.page-error
+      .container
+          .page-error__inner
+              .page-error__text
+                h1.page-error__title 404
+                p.page-error__subtitle Страница не найдена
+                +btn({
+                  name: 'На главную',
+                  type: 'link',
+                  link: '/'
+                })
+              img.page-error__logo(src="./images/footer-text.svg")

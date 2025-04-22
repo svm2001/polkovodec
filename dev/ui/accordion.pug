@@ -1,0 +1,21 @@
+-
+  const defaultAccordionProps = {
+      name: 'Accordion',
+      icon: '',
+      classes: '',
+  }
+
+mixin accordion(props = defaultAccordionProps, ...dataset)
+  -
+    const checkProps = {
+        name: props.name ? props.name : defaultAccordionProps.name,
+        icon: props.icon ? props.icon : defaultAccordionProps.icon,
+        classes: props.classes ? props.classes : defaultAccordionProps.classes,
+    }
+  include ../icon
+  .accordion(data-accordion-item)
+      .accordion__heading
+          button.accordion__button(id="accordion-0" aria-expanded="true" aria-controls="accordion-0-content")
+              span = checkProps.name
+              if checkProps.icon
+                +icon(checkProps.icon)

@@ -1,0 +1,94 @@
+@import '@/assets/styles/main';
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 24px;
+
+  &__link {
+    font-size: 12px;
+
+    &--main {
+      color: $primary-green !important;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &--current {
+      color: $black;
+    }
+  }
+}
+
+.policy {
+  padding: 136px 0 0 0;
+
+  .breadcrumbs + div {
+    max-width: 1000px;
+  }
+
+  h1 {
+    font-weight: 600;
+    font-size: 50px;
+    margin-bottom: 37px;
+    margin-top: 0;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 32px;
+    margin: 28px 0;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 140%;
+    margin-bottom: 16px
+  }
+
+  a {
+    transition: 0.1s;
+    color: $black;
+    &:hover {
+      color: $primary-green;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+
+  .breadcrumbs {
+    gap: 4px;
+    margin-bottom: 20px;
+  
+    &__link {
+      font-size: 11px;
+    }
+  }
+
+  .policy {
+    padding: 60px 0;
+
+    .breadcrumbs + div {
+      max-width: 100%;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin: 16px 0;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 140%;
+      margin-bottom: 10px;
+    }
+  }
+}

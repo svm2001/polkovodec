@@ -20,6 +20,8 @@ export default defineConfig({
       input: {
         index: resolve(__dirname, './dev/index.html'),
         policy: resolve(__dirname, './dev/policy.html'),
+        page404: resolve(__dirname, './dev/404.html'),
+        page500: resolve(__dirname, './dev/500.html'),
       },
       output: {
         entryFileNames: `assets/[name].js`,
