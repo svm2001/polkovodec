@@ -67,7 +67,7 @@ export default function validate() {
                   } else if (valueField.length !== 18) {
                     error(input, 'Введите полный номер телефона').set()
                   } else {
-                    error(input, 'Введите корректный номер телефона, начинающийся с +7-9...').set()
+                    error(input, 'Номер введен некорректно').set()
                   }
                   break
                 default:
