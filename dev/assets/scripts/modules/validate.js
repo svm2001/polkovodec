@@ -62,10 +62,12 @@ export default function validate() {
                   }
                   break
                 case 'phone':
-                  if (valueField.length === 18) {
+                  if (valueField.length === 18 && valueField.startsWith('+7 (9')) {
                     error(input).remove()
-                  } else {
+                  } else if (valueField.length !== 18) {
                     error(input, 'Введите полный номер телефона').set()
+                  } else {
+                    error(input, 'Введите корректный номер телефона, начинающийся с +7-9...').set()
                   }
                   break
                 default:

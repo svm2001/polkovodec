@@ -24,6 +24,6 @@ export default function phoneMask() {
   }
 
   mask('phone', {
-    mask: '+{7} (000) 000-00-00',
+    mask: '+{7} (900) 000-00-00',
   })
 }
